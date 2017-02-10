@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const nodeEnv = process.env.NODE_ENV || 'production'
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool : 'source-map',
@@ -17,8 +18,9 @@ module.exports = {
 		 },
 		 {
 		    test: /\.scss$/,
-		    loaders: ['style-loader', 'css-loader', 'sass-loader']
-		 }
+			 loader: ExtractTextPlugin.extract({fallbackLoader: "style-loader", loader: "css-loader!sass-loader"})		 
+		 },
+		 
 		    
 	 ]
   },
@@ -33,6 +35,9 @@ module.exports = {
      //env plugin
 	  new webpack.DefinePlugin({
         'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
-	  })
+	  }),
+	 
+     //env plugin -- css
+     new ExtractTextPlugin({filename: './dist/styles.css', allChunks: true})
   ]
 }
