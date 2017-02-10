@@ -1,7 +1,3 @@
-*{
-	box-sizing: border-box;
-}
-
 body{
 	background: purple;
 }
@@ -10,4 +6,8 @@ $txt-color: red;
 
 h2{
 	color: $txt-color;
+}
+
+h3{
+	color: green;
 }

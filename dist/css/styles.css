@@ -1,10 +1,10 @@
-* {
-  box-sizing: border-box; }
-
 body {
   background: purple; }
 
 h2 {
   color: red; }
+
+h3 {
+  color: green; }
 
 /*# sourceMappingURL=styles.css.map*/
