@@ -12,7 +12,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "flickity": "^2.0.5",
-    "jquery": "^3.1.1",
+    "jquery": "^2.2.4",
     "jsonp": "^0.2.1",
     "lodash": "^4.17.4",
     "slug": "^0.9.1"
