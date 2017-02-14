@@ -10,12 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.15.3",
-    "flickity": "^2.0.5",
-    "jquery": "^2.2.4",
-    "jsonp": "^0.2.1",
-    "lodash": "^4.17.4",
-    "slug": "^0.9.1"
+    "jquery": "^2.2.4"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
