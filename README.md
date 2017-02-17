@@ -1,5 +1,33 @@
 #ES6 Module Bundler Setup
 
+##Setup 
+
+##### 1. Clone this repo
+```
+git clone git@github.com:t3tools/webpack-es6-and-scss.git «your-projet»
+```
+
+##### 2. Install the packages
+```
+npm install
+```
+
+##### 3. Run the taskrunner & run the local server
+- Task Runner
+```
+npm run go
+```
+
+- Server
+```
+npm start
+```
+
+##### 4. Workflow
+Do scss and javascript work in the `src/` directory. It will compile to the `dist/` with the taskrunner.
+
+`index.html` pages are served out of the `dist/`
+
 ##Webpack Configuration:
 ```
 const webpack = require('webpack')

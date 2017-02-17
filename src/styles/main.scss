@@ -1,13 +1,15 @@
-body{
-	background: purple;
+*{
+	box-sizing: border-box;
 }
 
-$txt-color: red;
+body{
+	background: limegreen;
+}
+
+$txt-color: maroon;
 
 h2{
 	color: $txt-color;
+	border-bottom: 4px solid $txt-color;
 }
 
-h3{
-	color: green;
-}

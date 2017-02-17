@@ -4,6 +4,7 @@
   "description": "starter kit for webpack-es6",
   "main": "app.js",
   "scripts": {
+    "start": "node --use_strict server.js",
     "go": "webpack --progress --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +22,11 @@
     "node-sass": "^4.5.0",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.1",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+	 "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+
   }
 }
