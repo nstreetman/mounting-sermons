@@ -1,6 +1,10 @@
 const Router = require('express').Router
 const axios = require('axios')
 
-const indexRouter = Router()
+const apiRouter = Router()
 
-indexRouter.get('/', (req, res)=> {res.render('index') })
+apiRouter.get('/', (req, res)=> { 
+	res.json(res).status(200) 
+})
+
+module.exports = apiRouter

@@ -15,8 +15,8 @@ function connectToDB(projectName){
       if (process.env.NODE_ENV !== "development") dbLocation = process.env.MONGODB_URI
 		  
       establishDbConnection(dbLocation)
-			.then( (x) => {console.log(`----  connected to ${x} ----`) })
-			.catch( (x) => {console.log(`db connection error: `, x)})
+			.then( (x) => {console.log(chalk.green(`----  connected to ${x}`)) })
+			.catch( (x) => {console.log(chalk.red(`db connection error: `, x)) })
 }
 
 module.exports = connectToDB
