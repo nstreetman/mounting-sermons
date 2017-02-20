@@ -9,7 +9,8 @@
     "server-dev": "NODE_ENV=development nodemon server.js",
     "webpack-watcher": "webpack --progress --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "set-project-name" : "node ./src-server/cli/setProjectName.js"
+    "set-project-name" : "node ./src-server/cli/setProjectName.js",
+    "build-dist": "webpack"
   },
   "author": "",
   "license": "ISC",

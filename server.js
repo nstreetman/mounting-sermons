@@ -3,7 +3,7 @@
 global.chalk = require('chalk')
 global.PROJECT_NAME = require('./src-server/config/projectName.js')
 
-if(typeof PROJECT_NAME !== 'string' && process.env === 'development' ){ 
+if(typeof PROJECT_NAME !== 'string' ){ 
 	require('./src-server/cli/setProjectName.js')
 	throw new Error(`\n${chalk.bgRed.bold('There must be a project name exported from :')} ${chalk.grey.bold('./src-server/config/projectName.js')} \n ${chalk.bgWhite.black(' you must execute: ')} ${chalk.cyan.bold('npm run set-project-name')}` ) 
 }
@@ -27,10 +27,14 @@ const apiRouter = require('./src-server/routes/apiRouter.js')
 const app = express()
 
 //configure webpack
-app.use(webpackMiddleware(webpackCompiler, {
-   noInfo: true,
-   publicPath: webpackConfig.output.publicPath
-}));
+if( process.env === 'development' ){
+	app.use(webpackMiddleware(webpackCompiler, {
+	   noInfo: true,
+	   publicPath: webpackConfig.output.publicPath
+	}));
+}
+
+
 
 
 // set port if exists in environment for heroku or live site, else set to 3000 for dev
