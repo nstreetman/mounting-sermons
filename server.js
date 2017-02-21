@@ -8,10 +8,6 @@ if(typeof PROJECT_NAME !== 'string' ){
 	throw new Error(`\n${chalk.bgRed.bold('There must be a project name exported from :')} ${chalk.grey.bold('./src-server/config/projectName.js')} \n ${chalk.bgWhite.black(' you must execute: ')} ${chalk.cyan.bold('npm run set-project-name')}` ) 
 }
 
-const webpack = require('webpack');
-const webpackMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('./webpack.config.js');
-const webpackCompiler = webpack(webpackConfig)
 
 const express = require('express') //import express web server
 const renderFile = require('ejs').renderFile //import view templating engine 
@@ -27,7 +23,12 @@ const apiRouter = require('./src-server/routes/apiRouter.js')
 const app = express()
 
 //configure webpack
-if( process.env === 'development' ){
+if( process.env.NODE_ENV === 'development' ){
+	const webpack = require('webpack');
+	const webpackMiddleware = require('webpack-dev-middleware');
+	const webpackConfig = require('./webpack.config.js');
+	const webpackCompiler = webpack(webpackConfig);
+
 	app.use(webpackMiddleware(webpackCompiler, {
 	   noInfo: true,
 	   publicPath: webpackConfig.output.publicPath
