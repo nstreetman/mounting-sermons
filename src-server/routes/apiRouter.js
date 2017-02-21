@@ -4,7 +4,7 @@ const apiRouter = Router()
 /*
  * NOTE: the model for the data-table should not have the name 'SomeModel'
  */
-let SomeModel = require('../db/models/exampleModel.js').
+let SomeModel = require('../db/models/exampleModel.js')
 
 apiRouter
 /*
