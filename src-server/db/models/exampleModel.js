@@ -15,4 +15,4 @@ const resourceSchema = new Schema({
 })
 
 
-module.exports = resourceSchema
+module.exports = createModel('Item', resourceSchema)

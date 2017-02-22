@@ -1,8 +1,9 @@
 const mongoose = require( 'backbone');
-const Band = require('./models/bandModel');
 const connectToDB = require('./db-connect.js')
 const PROJECT_NAME = require('../config/projectName.js')
 const axios = require('axios')
+
+const SomeModel = require('./models/exampleModel');
 
 if(typeof PROJECT_NAME !== 'string' ){ 
 	require('./src-server/cli/setProjectName.js')
@@ -23,8 +24,8 @@ connectToDB(PROJECT_NAME, (err, result)=>{
 		//   SEED ACTION ON EACH RECORD HERE
 		// 	dataRecord.sold = false 
 
-      let bandRecord = new Band(dataRecord)
-		bandRecord.save((err, savedRecord)=>{
+      let record = new SomeModel(dataRecord)
+		record.save((err, savedRecord)=>{
 			if (err) console.log(err)
 			console.log('saved: ' + savedRecord._id )
 		 }) 
