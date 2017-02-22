@@ -25,7 +25,7 @@ const app = express()
 
 //configure bodyParser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json() 
+app.use(bodyParser.json())
 
 //configure webpack
 if( process.env.NODE_ENV === 'development' ){

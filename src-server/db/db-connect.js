@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const chalk = require('chalk')
 
 function establishDbConnection (dbUrl){
 	return new Promise(function(resolve, reject){
