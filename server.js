@@ -8,7 +8,7 @@ if(typeof PROJECT_NAME !== 'string' ){
 	throw new Error(`\n${chalk.bgRed.bold('There must be a project name exported from :')} ${chalk.grey.bold('./src-server/config/projectName.js')} \n ${chalk.bgWhite.black(' you must execute: ')} ${chalk.cyan.bold('npm run set-project-name')}` ) 
 }
 
-
+const	bodyParser = require('body-parser')
 const express = require('express') //import express web server
 const renderFile = require('ejs').renderFile //import view templating engine 
 const connectToDB = require('./src-server/db/db-connect.js') //connect to db
@@ -21,6 +21,11 @@ const apiRouter = require('./src-server/routes/apiRouter.js')
 // RUN APP
 // =========
 const app = express()
+
+
+//configure bodyParser middleware
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json() 
 
 //configure webpack
 if( process.env.NODE_ENV === 'development' ){
