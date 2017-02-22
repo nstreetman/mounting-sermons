@@ -9,7 +9,7 @@
     "server-dev": "NODE_ENV=development nodemon server.js",
     "webpack-watcher": "webpack --progress --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "set-project-name" : "node ./src-server/cli/setProjectName.js",
+    "set-project-name": "node ./src-server/cli/setProjectName.js",
     "build-dist": "webpack"
   },
   "author": "",
@@ -17,12 +17,13 @@
   "dependencies": {
     "axios": "^0.15.3",
     "backbone": "^1.3.3",
+    "body-parser": "^1.16.1",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
     "jquery": "^2.2.4",
     "mongoose": "^4.8.3",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "ejs": "^2.4.2",
-    "express": "^4.14.0"
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "webpack-dev-middleware": "^1.8.4",
