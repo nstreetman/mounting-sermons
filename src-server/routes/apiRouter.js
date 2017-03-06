@@ -6,15 +6,14 @@ const apiRouter = Router()
  */
 let ExampleModel = require('../db/models/exampleModel.js')
 let apiController = require('../controllers/apiController.js')(ExampleModel)
-let {} = apiController
+let {	getMany, getOne, 	createOne,	updateOne, deleteOne} = apiController
 
 apiRouter
- .get('/some-model', )
- .post('/some-model', )
- .get('/some-model/:_id', )
- .put('/some-model/:_id', )
-
- .delete('/some-model/:_id', )
+ .get('/shouts', getMany)
+ .post('/shouts', createOne)
+ .get('/shouts/:_id', getOne)
+ .put('/shouts/:_id', updateOne)
+ .delete('/shouts/:_id', deleteOne)
 
  // TO DELETE ALL:
  // .delete("/resources/all/records", function(req, res){

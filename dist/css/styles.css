@@ -1,11 +1,8 @@
 * {
   box-sizing: border-box; }
 
-body {
-  background: limegreen; }
-
-h2 {
-  color: #333;
-  border-bottom: 4px solid #333; }
+img {
+  width: 100%;
+  display: block; }
 
 /*# sourceMappingURL=styles.css.map*/

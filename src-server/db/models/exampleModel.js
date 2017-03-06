@@ -7,12 +7,12 @@ const Schema = mongoose.Schema;
 // ----------------------
 const itemSchema = new Schema({
   // example of optional fields
-  title:        { type: String, required: true },
-  description:  { type: String },
-  upVotes:      { type: Number, default: 0 },
-  createdAt:    { type: Date, default: Date.now }
+  msg:        { type: String, required: true },
+  from:       { type: String },
+  imgLink:    { type: String },
+  rating:     { type: String }
 
 })
 
 
-module.exports = createModel('Item', resourceSchema)
+module.exports = createModel('Item', itemSchema)
