@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 // ----------------------
 // DATA TABLE
 // ----------------------
-const resourceSchema = new Schema({
+const itemSchema = new Schema({
   // example of optional fields
   title:        { type: String, required: true },
   description:  { type: String },

@@ -5,7 +5,6 @@ const {getIndex, makeProxyRequest} = require('../controllers/indexController');
 const indexRouter = Router();
 
 indexRouter.get('/', getIndex )
-
 indexRouter.get('/proxy', makeProxyRequest )
 
 module.exports = indexRouter
