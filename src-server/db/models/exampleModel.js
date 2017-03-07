@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const createModel = mongoose.model.bind(mongoose);
 const Schema = mongoose.Schema;
 
 // ----------------------
@@ -15,4 +14,4 @@ const itemSchema = new Schema({
 })
 
 
-module.exports = createModel('Item', itemSchema)
+module.exports = mongoose.model('Item', itemSchema)
