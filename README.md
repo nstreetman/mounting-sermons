@@ -1,8 +1,11 @@
-# MERN Stack
-Mongo
-Express
+# Webpack Fullstack Monolith
+
+## BREMP Stack
+Backbone
 React
-Node
+Express
+Mongo
+Passport
 
 ##Setup 
 
@@ -29,14 +32,14 @@ Do scss and javascript work in the `src-server/` directory. It will compile to t
 `index.html` pages are served out of the `dist/`
 
 #### 5. Backend Routes
-- `/api`
+- **`/api`**
   - GET `/api/items`
   - GET `/api/items/:id`
   - POST `/api/items/`
   - PUT `/api/items/:id`
   - DELETE `/api/items/:id`
-- `/auth` 
+- **`/auth`** 
   - POST `/auth/register`
-  - POST `/login`
-  - GET `/current`
-  - GET `/logout`
+  - POST `/auth/login`
+  - GET `/auth/current`
+  - GET `/auth/logout`
