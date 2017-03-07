@@ -9,11 +9,11 @@ let apiController = require('../controllers/apiController.js')(ExampleModel)
 let {	getMany, getOne, 	createOne,	updateOne, deleteOne} = apiController
 
 apiRouter
- .get('/chirps', getMany)
- .post('/chirps', createOne)
- .get('/chirps/:_id', getOne)
- .put('/chirps/:_id', updateOne)
- .delete('/chirps/:_id', deleteOne)
+ .get('/item', getMany)
+ .post('/item', createOne)
+ .get('/item/:_id', getOne)
+ .put('/item/:_id', updateOne)
+ .delete('/item/:_id', deleteOne)
 
  // TO DELETE ALL:
  // .delete("/resources/all/records", function(req, res){

@@ -30,9 +30,13 @@ Do scss and javascript work in the `src-server/` directory. It will compile to t
 
 #### 5. Backend Routes
 - `/api`
-  - `/`
-- `/auth`
-  - `/register`
-  - `/login`
-  - `/current`
-  - 
+  - GET `/api/items`
+  - GET `/api/items/:id`
+  - POST `/api/items/`
+  - PUT `/api/items/:id`
+  - DELETE `/api/items/:id`
+- `/auth` 
+  - POST `/auth/register`
+  - POST `/login`
+  - GET `/current`
+  - GET `/logout`
