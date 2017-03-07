@@ -11,10 +11,18 @@ if(typeof PROJECT_NAME !== 'string' ){
 const	bodyParser = require('body-parser')
 const express = require('express') //import express web server
 const renderFile = require('ejs').renderFile //import view templating engine 
+
+const passport = require('passport')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
+
+const configurePassport_Local = require('./src-server/config/passportConfig-local.js')
+
 const connectToDB = require('./src-server/db/db-connect.js') //connect to db
 
 const indexRouter = require('./src-server/routes/indexRouter.js')
 const apiRouter = require('./src-server/routes/apiRouter.js')
+const authRouter = require('./src-server/routes/authRouter.js')
 
 
 // =========
@@ -26,6 +34,17 @@ const app = express()
 //configure bodyParser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+//configure sessions w/ passport
+app.use(cookieParser())
+app.use(session({
+	secret: require('./secrets.js').sessionSecret,
+	resave: true,
+	saveUninitialized: true
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+configurePassport_Local()
 
 //configure webpack
 if( process.env.NODE_ENV === 'development' ){
@@ -65,6 +84,7 @@ app.use( express.static( `${__dirname}/dist`) );
 // ------------------------------
 app.use('/', indexRouter)
 app.use('/api', apiRouter)
+app.use('/auth', authRouter)
 
 
 //---------------------

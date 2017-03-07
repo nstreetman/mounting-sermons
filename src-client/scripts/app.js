@@ -1,12 +1,20 @@
 import Backbone from 'backbone';
 import ReactDOM from 'react-dom'
+import $ from 'jquery'
 import React from 'react'
 import {HomeView} from './views/view-home.js'
 import {ShoutCollection} from './models/model-shout.js'
 
 
+
 const AppRouter = Backbone.Router.extend({
 	initialize: function(){
+		console.log('WHAAATTT???')
+		UserModel.login('letsdance@mail.com', '12345').then(function(serverRes){
+			console.log(serverRes)
+		}).fail(function(err){
+			console.log('failed!', err)
+		})
 		Backbone.history.start()
 	},
 	

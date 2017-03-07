@@ -32,20 +32,22 @@ function authController(UserMod){
    }
 
 	function authenticateUser(req, res, next){
-	  passport.authenticate('local', function(err,user,info) {
-       if (err || !user) { 
-			return res.status(400).send('incorrect email/password combination')
-       }
-       req.login(user, (err)=>{
-          if (err) { return res.status(500).send(err) }
-          delete user.password
-          return res.json(user).status(200)
-       })
-       next()
-     })(req,res,next)  
+	  passport.authenticate('local', _handleAuth(req,res,next))(req,res,next)  
    }
+	
+	function _handleAuth(req,res,next){
+		return (err,user,info)=>{
+		  if (err || !user) {
+			 return res.status(400).send('incorrect email/password combination')
+		  }
+		  req.login(user, (err)=>{
+			  if (err) { return res.status(500).send(err) }
+			  delete user.password
+			  return res.json(user).status(200)
+		  })
+		  next()
+		}
 	}
-
 	function logoutUser(req, res) {
      if (!req.user) { return res.json({msg: 'error: no current user'}).status(200) }
      
