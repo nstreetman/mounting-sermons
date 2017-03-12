@@ -1,45 +1,14 @@
-# Webpack Fullstack Monolith
+# Proper Authentication
 
-## BREMP Stack
-Backbone
-React
-Express
-Mongo
-Passport
+### Hashing v Encryption
+#### Encryption
+- password encrypted thru private key
+- if db is compromised and if private key for decrypting is compromised then password is accessible
 
-##Setup 
-
-##### 1. Clone this repo
-```
-git clone git@github.com:t3tools/webpack-es6-and-scss.git «your-projet»
-```
-
-##### 2. Install the packages
-```
-npm install
-```
-
-##### 3. Run the taskrunner & run the local server
-- Task Runner
-```
-npm run go
-```
-
-
-##### 4. Workflow
-Do scss and javascript work in the `src-server/` directory. It will compile to the `dist/` with the taskrunner.
-
-`index.html` pages are served out of the `dist/`
-
-#### 5. Backend Routes
-- **`/api`**
-  - GET `/api/items`
-  - GET `/api/items/:id`
-  - POST `/api/items/`
-  - PUT `/api/items/:id`
-  - DELETE `/api/items/:id`
-- **`/auth`** 
-  - POST `/auth/register`
-  - POST `/auth/login`
-  - GET `/auth/current`
-  - GET `/auth/logout`
+#### Hash 
+- password guess run through hashing algorithm to see if equal to hash value stored
+- Hash + Time === Key Derivation Function
+  + bcrypt
+    - hashing function
+    - accumulative hashing rounds
+	 - implements salt w/ high entropy

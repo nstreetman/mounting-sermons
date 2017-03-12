@@ -15,7 +15,11 @@ function authController(UserMod){
        }
 
        newUser.save(function(err, record){
-         if(err) return res.status(500).send('server/db error on attempt to save user to db')
+			
+         if(err) {
+				console.log(err)
+				return res.status(500).json(err)
+			}
          let userCopy = newUser.toObject()
          delete userCopy.password
          return res.json(userCopy).status(200)
@@ -32,22 +36,29 @@ function authController(UserMod){
    }
 
 	function authenticateUser(req, res, next){
+	  console.log(req.body)
 	  passport.authenticate('local', _handleAuth(req,res,next))(req,res,next)  
    }
 	
 	function _handleAuth(req,res,next){
-		return (err,user,info)=>{
-		  if (err || !user) {
-			 return res.status(400).send('incorrect email/password combination')
+		console.log('handling auth.....')
+		return (err, validPw, info)=>{
+        // failure callback triggered in passport-local strategy
+		  if (err || !validPw) {
+			 return res.status(403).json(info)
 		  }
-		  req.login(user, (err)=>{
+
+		  let userRecord = info
+		  req.login(info, (err)=>{
 			  if (err) { return res.status(500).send(err) }
-			  delete user.password
-			  return res.json(user).status(200)
+			  userRecord.password = undefined
+			  delete userRecord.password
+			  return res.json(userRecord).status(200)
 		  })
 		  next()
 		}
 	}
+	
 	function logoutUser(req, res) {
      if (!req.user) { return res.json({msg: 'error: no current user'}).status(200) }
      

@@ -2,6 +2,25 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy;
 const {User} = require('../db/models/userModel.js')
 
+function handleLoginForUser(inputUser, inputPW, doneCb){
+	return function(err, results){
+		  console.log(inputPW)
+        if(err || !results){  
+          //will trigger failure callback
+          doneCb(null , false, {message: "no user exists with that email"})   
+        } 
+        let user = new User(results)
+	     user.checkPasswordToHash(inputPW).then(function(bCryptResults){
+	 	    console.log('success!!', bCryptResults)
+          // calls req.login(results) -- triggers success callback
+          doneCb(null, true ,bCryptResults); 
+	 	  }).catch(function(err){
+          //will trigger failure callback
+	 		 doneCb(null, false, { message: "bad password"} )      
+	 	  })
+    }
+}
+
 module.exports = function(){
   let authFields = {
       usernameField: 'email',
@@ -9,27 +28,16 @@ module.exports = function(){
   }
 
   let onLogin = function(inputUser, inputPW, done){
-      User.findOne({"email": inputUser}, function(err, results){
-        if(err || !results){  
-          //will trigger failure callback
-          done(null , false, {message: "no user exists with that email"})   
-        } else if(results.password !== inputPW) {
-          //will trigger failure callback
-          done(null, false, {message: "bad password"} )      
-        } else {
-          done(null, results); 
-          //calls req.login(results)
-        }
-    })
-
+		console.log(inputPW);
+      User.findOne({"email": inputUser}, handleLoginForUser(inputUser, inputPW, done) )
   }
 
-  passport.serializeUser( function(user, done){
+  passport.serializeUser((user, done)=>{
     done(null, user.id);
   })
 
-  passport.deserializeUser( function(userId, done){
-    User.findById(userId, "-password", function(err, record){
+  passport.deserializeUser( (userId, done)=>{
+    User.findById(userId, "-password", (err, record) => {
       done(null, record)
     })
   })
