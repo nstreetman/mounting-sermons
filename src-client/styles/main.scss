@@ -23,26 +23,24 @@ footer {
 
 #app-container{
 	font-size: medium;
+	width: 100%;
 }
 
 .header{
 	background-color: green;
 }
 
-.view-container {
+.view {
 	background-color: yellow;
-	padding: 10px;
 	text-align: center;
 }
 
 .sermon_scroll-list{
 	background-color: blue;
-	margin:2.5%;
 }
 
 .sermon_filter-ops{
 	background-color: red;
-	margin:2.5%;
 }
 
 .footer {
