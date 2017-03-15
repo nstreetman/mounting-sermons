@@ -4,7 +4,8 @@
 
 body{
 	font-family: Helvetica;
-	color: red;
+	color: #fff;
+	font-size: 0;
 }
 
 img {
@@ -14,7 +15,46 @@ img {
 
 h1{
 	text-align: center;
-	font-size: 10vw;
-	color: #2574A9;
-	text-decoration: underline;
+}
+
+footer {
+	background-color: #333;
+}
+
+#app-container{
+	font-size: medium;
+}
+
+.header{
+	background-color: green;
+}
+
+.view-container {
+	background-color: yellow;
+	padding: 10px;
+	text-align: center;
+}
+
+.sermon_scroll-list{
+	background-color: blue;
+	margin:2.5%;
+}
+
+.sermon_filter-ops{
+	background-color: red;
+	margin:2.5%;
+}
+
+.footer {
+	background-color: yellow;
+}
+
+// mobile-phone
+@media screen and (max-width: 768px){
+
+}
+
+// mobile-tablet
+@media screen and (max-width:1000px) and (min-width:768px){
+
 }
