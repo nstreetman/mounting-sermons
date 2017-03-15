@@ -20,7 +20,7 @@ const usersSchema = new Schema({
 function hashNewPassword(next){
    let user = this //context is 
 	if(!user.isModified('password')){ return next() }
-   bcrypt.hash(user.password, 16.5, (err, hash)=>{
+   bcrypt.hash(user.password, 10, (err, hash)=>{
       if(err){ return next(err)}
       user.password = hash;
       next()
@@ -28,7 +28,6 @@ function hashNewPassword(next){
 }
 
 function handlePasswordCompare(inputPW, user){
-	console.log(user)
 	return function(resolve, reject){
 		bcrypt.compare(inputPW, user.password, (err, passwordMatch)=>{
 			if(err || !passwordMatch){ return reject(false) }

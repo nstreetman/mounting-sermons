@@ -8,7 +8,7 @@ function authController(UserMod){
      let newUser = new UserMod(req.body)
 
      UserMod.find({email: req.body.email}, function(err, results){
-       if (err) return res.status(500).send('error saving querying db for user')
+       if (err) return res.status(500).json(err)
 
        if(results !== null && results.length > 0 ) { 
          return res.status(401).send(`oops, record for <${req.body.email}> already exists`)
@@ -21,6 +21,7 @@ function authController(UserMod){
 				return res.status(500).json(err)
 			}
          let userCopy = newUser.toObject()
+         userCopy.password = undefined
          delete userCopy.password
          return res.json(userCopy).status(200)
        })
