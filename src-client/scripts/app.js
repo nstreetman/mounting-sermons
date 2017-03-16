@@ -3,11 +3,11 @@ import React from 'react'
 import Backbone from 'backbone'
 import $ from 'jquery'
 
-// import {campusView} from '../views/campus_view.js'
-// import {clergyView} from '../views/clergy_view.js'
-// import {formView} from '../views/form_view.js'
-// import {homeView} from '../views/home_view.js'
-// import {seriesView} from '..views/series_view.js'
+// import {campusView} from './views/campus_view.js'
+// import {clergyView} from './views/clergy_view.js'
+// import {formView} from './views/form_view.js'
+// import {homeView} from './views/home_view.js'
+// import {seriesView} from '.views/series_view.js'
 
 const appRouter = Backbone.Router.extend({
    initialize: function(){
@@ -28,17 +28,17 @@ const appRouter = Backbone.Router.extend({
 
    showClergyView: function(){
       // get.json from youtube API/////
-      reactDom.render(<clergy/>, document.querySelector('#app-container'))
+      reactDom.render(<clergy/>, document.querySelector('#col-sm-8'))
    },
 
    showSeriesView: function(){
       // get.json from youtube API///////
-      reactDOM.render(<series/>, document.querySelector('#app-container'))
+      reactDOM.render(<series/>, document.querySelector('#col-sm-8'))
    },
 
    showCampusView: function(){
       // get.json from youtube API///////
-      reactDOM.render(<campus/>, document.querySelector('#app-container'))
+      reactDOM.render(<campus/>, document.querySelector('#col-sm-8'))
    },
 
    showFormView: function(){
