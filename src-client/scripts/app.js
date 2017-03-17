@@ -8,9 +8,10 @@ import {HomeView} from './views/home_view.js'
 // import {formView} from './views/form_view.js'
 // import {seriesView} from '.views/series_view.js'
 
-const appRouter = Backbone.Router.extend({
+const AppRouter = Backbone.Router.extend({
    initialize: function(){
       Backbone.history.start()
+      console.log('wired up');
    },
    routes : {
       'home' : 'showHomeView',
@@ -22,28 +23,28 @@ const appRouter = Backbone.Router.extend({
 
    showHomeView: function(){
       // get.json from youtube API/////
-      ReactDOM.render(<home/>, document.querySelector('#app-container'))
+      ReactDOM.render(<HomeView/>, document.querySelector('#app-container'))
    },
 
    showClergyView: function(){
       // get.json from youtube API/////
-      reactDom.render(<clergy/>, document.querySelector('#col-sm-8'))
+      reactDom.render(<ClergyView/>, document.querySelector('#col-sm-8'))
    },
 
    showSeriesView: function(){
       // get.json from youtube API///////
-      reactDOM.render(<series/>, document.querySelector('#col-sm-8'))
+      reactDOM.render(<SeriesView/>, document.querySelector('#col-sm-8'))
    },
 
    showCampusView: function(){
       // get.json from youtube API///////
-      reactDOM.render(<campus/>, document.querySelector('#col-sm-8'))
+      reactDOM.render(<CampusView/>, document.querySelector('#col-sm-8'))
    },
 
    showFormView: function(){
       // get.json from youtube API///////
-      reactDOM.render(<form/>, document.querySelector('#app-container'))
+      reactDOM.render(<FormView/>, document.querySelector('#app-container'))
    },
 
 })
-let myApp = new appRouter
+new AppRouter

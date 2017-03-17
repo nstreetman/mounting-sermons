@@ -1,4 +1,5 @@
 import React from 'react'
+import {ACTIONS} from '../actions.js'
 
 export const HomeView = React.createClass({
    getInitialState: function(){
@@ -17,7 +18,9 @@ export const HomeView = React.createClass({
    render: function(){
       return(
          <div className="container">
-            <h1> something </h1>
+            <h1> something to show!!!! </h1>
+            <p> something more </p>
+            <p> even more </p>
             <componentFilter/>
             <componentSermons/>
          </div>

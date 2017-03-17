@@ -1,4 +1,5 @@
 import Backbone from 'backbone'
+import {SermonModel, SermonCollection} from '..'
 
 export const ACTIONS = {
    saveNewSermon: function(uesrFormEntry){
