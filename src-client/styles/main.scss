@@ -54,8 +54,18 @@ footer {
 	background-color: red;
 }
 
-.footer {
-	background-color: yellow;
+.footer_container {
+	text-align: center;
+}
+
+.footer_container .btn-default {
+	border: 2px solid #fff;
+	background-color: #333;
+	color: #fff;
+}
+
+.socialbtn {
+	border-radius: %50;
 }
 
 // mobile-phone
