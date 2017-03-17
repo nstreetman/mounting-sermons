@@ -1,12 +1,11 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import Backbone from 'backbone'
-import $ from 'jquery'
+import {homeView} from './views/home_view.js'
 
 // import {campusView} from './views/campus_view.js'
 // import {clergyView} from './views/clergy_view.js'
 // import {formView} from './views/form_view.js'
-// import {homeView} from './views/home_view.js'
 // import {seriesView} from '.views/series_view.js'
 
 const appRouter = Backbone.Router.extend({

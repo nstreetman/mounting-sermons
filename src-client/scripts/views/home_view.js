@@ -17,6 +17,7 @@ export const HomeView = React.createClass({
    render: function(){
       return(
          <div className="container">
+            <h1> something </h1>
             <componentFilter/>
             <componentSermons/>
          </div>
