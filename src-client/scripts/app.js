@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import Backbone from 'backbone'
-import {homeView} from './views/home_view.js'
+import {HomeView} from './views/home_view.js'
 
 // import {campusView} from './views/campus_view.js'
 // import {clergyView} from './views/clergy_view.js'
