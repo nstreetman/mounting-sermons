@@ -2,24 +2,38 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 let dropDownStyle ={
-   color: 'black'
+   position: 'fixed',
+	right:0, top: 0,
+	height: '100%',
+	background: 'red',
+	padding: 0,
+	width: '280px'
+}
+let dropStyle= {
+	padding: '12px',
+	background: '#ddd',
+	border: '1px solid #333'
 }
 
 export const DropDownBox = React.createClass({
-   _makeFilterList: function(evt){
-      evt.preventDefault();
-      let fromEl = evt.target
-      let filterValsObject = {
-         clergy: 'something',
-         campus: 'something else',
-         series: 'something more'
-      }
-   },
+   // _makeFilterList: function(evt){
+   //    evt.preventDefault();
+   //    let fromEl = evt.target
+   //    let filterValsObject = {
+   //       clergy: 'something',
+   //       campus: 'something else',
+   //       series: 'something more'
+   //    }
+   // },
       render: function(){
 
          return (
-            <div className="col-sm-4">
-               <h2 style={dropDownStyle}> seConsd! </h2>
+            <div style={dropDownStyle}>
+               <ul style={{listStyleType: 'none', padding: 0}}>
+                  <button><li style={dropStyle} data-route="CLERGY">Clergy</li></button>
+                  <button><li style={dropStyle} data-route="CAMPUS">Campus</li></button>
+                  <button><li style={dropStyle} data-route="SERIES">Series</li></button>
+               </ul>
             </div>
          )
       }

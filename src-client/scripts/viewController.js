@@ -5,6 +5,7 @@ import {STORE} from './store.js'
 import {DropDownBox} from '../components/component-filter.js'
 import {FooterComponent} from '../components/component-footer.js'
 import {HeaderComponent} from '../components/component-header.js'
+import {HomeView} from './views/view-home.js'
 
 export const ViewController = React.createClass({
 
@@ -29,7 +30,7 @@ export const ViewController = React.createClass({
 
 		switch(currentView){
 			case "HOME":
-				componentToRender = <h1> The Home Page</h1>
+				componentToRender = <h1>{HomeView}</h1>
 				break;
 			case "LOGIN":
 				componentToRender =  <h1>Login Form Page</h1>
@@ -52,9 +53,9 @@ export const ViewController = React.createClass({
 
 		return (
 			<div>
-				<HeaderComponent/>
+				// <HeaderComponent/>
 				<DropDownBox/>
-				<FooterComponent/>
+				// <FooterComponent/>
 				{componentToRender}
 			</div>
 		)
