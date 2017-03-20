@@ -1,33 +1,14 @@
-import Backbone from 'Backbone'
+import React from 'react'
+import {ACTIONS} from '../actions.js'
+import {STORE} from '../store.js'
 
-// const FormView = Backbone.View.extend({
-//   el:'#app-container',
-//   events : {
-//     'submit #new-sermon' : 'handleSermonSubmit'
-//   },
-//
-//   handleSermonSubmit: function(evt){
-//     evt.preventDefault()
-//     let formEl = evt.target
-//
-//     let formData= {
-//       name: "The Rev. Chris Warner"
-//       dateOfSermon:
-//       campus: "DanielIsland"
-//       series: "Formed In Christ"
-//     }
-//   },
-//   _templateHtml: function (){
-//
-//     return`
-//       <div className="form-container">
-//       <h2 className="form-header">HELLO this is where the form goes!"</h1>
-//
-//
-//
-//       </div>
-//
-//
-//     `
-//   }
-// })
+export const UploadFormView = React.createClass({
+
+  render: function(){
+    return (
+      <div className="container-form">
+      <uploadFormComponent/>
+      </div>
+    )
+  }
+})
