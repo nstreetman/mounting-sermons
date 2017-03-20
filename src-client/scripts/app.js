@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import Backbone from 'backbone'
+
 import {ViewController} from './viewController.js'
 import {SermonCollection} from './models/model-sermon.js'
 import {HomeView} from './views/view-home.js'
@@ -52,3 +53,4 @@ ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))
 //
 // })
 // new AppRouter
+>>>>>>> 84e5b4e3cec384c4bd5972e0c6603131dbe77cd7
