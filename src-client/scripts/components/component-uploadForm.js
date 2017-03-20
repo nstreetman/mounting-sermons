@@ -17,7 +17,7 @@ _handleSermonSubmit: function(evt){
   let formEl = evt.target
   let formData= {
     name: "The Rev. Chris Warner"
-    dateOfSermon:
+    dateOfSermon: moment().subtract(10, 'days').calendar();
     campus: "Daniel Island"
     series: "Formed In Christ"
   }
@@ -56,32 +56,9 @@ _handleSermonSubmit: function(evt){
          <option value="ION">'I&#8217;On'</option>
      </select>
    </div>
-   
 
+   <div>
+      <input type='date'></input>
    </div>
 
 </form>
-// })({
-//   el:'#app-container',
-//   events : {
-//     'submit #new-sermon' : 'handleSermonSubmit'
-//   },
-//
-//   handleSermonSubmit: function(evt){
-//     evt.preventDefault()
-//     let formEl = evt.target
-//
-//   },
-//   _templateHtml: function (){
-//
-//     return`
-//       <div className="form-container">
-//       <h2 className="form-header">HELLO this is where the form goes!"</h1>
-//
-//
-//       </div>
-//
-//
-//     `
-//   }
-// })

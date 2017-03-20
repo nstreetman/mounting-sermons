@@ -6,6 +6,7 @@ import {DropDownBox} from '../components/component-filter.js'
 import {FooterComponent} from '../components/component-footer.js'
 import {HeaderComponent} from '../components/component-header.js'
 import {HomeView} from './views/view-home.js'
+import {UploadFormView} from './views/view-uploadForm.js'
 
 export const ViewController = React.createClass({
 
@@ -36,7 +37,7 @@ export const ViewController = React.createClass({
 				componentToRender =  <h1>Login Form Page</h1>
 				break;
 			case "UPLOAD":
-				componentToRender = <h1>Upload Form Page</h1>
+				componentToRender = <h1>{UploadFormView}</h1>
 				break;
 			case "SERIES":
 				componentToRender = <h1>Filtered by Series</h1>
