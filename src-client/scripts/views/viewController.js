@@ -3,45 +3,45 @@ import React from 'react'
 export const ViewController = React.createClass({
 
    getInitialState: function(){
-		ACTIONS.changeCurrentNav(this.props.fromRoute, window.location.hash)
-		let storeObject = STORE.getStoreData()
-		return storeObject
+	     let stateObj = STORE.getStoreData()
+        return stateObj
 	},
 
-   componentDidMount: function(){
-      let component = this
+   componentWillMount: function(){
+      let vcComponent = this
       STORE.onStoreChange(function(){
-         let newStoreObj = STORE.getStoreData()
-         component.setState(newStoreObj)
+         let newStoreState = STORE.getStoreData()
+         vccomponent.setState(newStoreState)
       })
 
-      ACTIONS.fetchAllSermons()
+      let router = new AppRuter()
    },
 
       render: function(){
+         let componentToRender = this.state.currentView
          let componentToRender
 
-         switch(this.state.currentNavRoute){
-			case "CAMPUS":
-				componentToRender = <CampusView {...this.state}/>
+         switch(currentView){
+			case "HOME":
+				componentToRender = <h1 className='M-bg_success'> Home Page </h1>
 				break;
 			case "CLERGY":
-				componentToRender = <ClergyView {...this.state}/>
-				break;
- 			case "FORM":
-				componentToRender = <FormView {...this.state}  />
-				break;
-            case "HOME":
-   			componentToRender = <HomeView {...this.state} />
-   			break;
-            case "HOME":
-      		componentToRender = <HomeView {...this.state} />
+				componentToRender = <h1 className = 'M-bg_info'> Login Form </h1>
+			// 	break;
+ 		// 	case "FORM":
+			// 	componentToRender = <FormView {...this.state}  />
+			// 	break;
+         //    case "HOME":
+   		// 	componentToRender = <HomeView {...this.state} />
+   		// 	break;
+         //    case "HOME":
+      	// 	componentToRender = <HomeView {...this.state} />
       		break;
  			default:
 		}
       return(
          <div>
-				<HomeView { ...this.state }/>
+				<SideBar/>
 				{componentToRender}
 			</div>
       )
