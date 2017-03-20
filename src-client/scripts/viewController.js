@@ -2,7 +2,7 @@ import React from 'react'
 import {AppRouter} from './router.js'
 import {ACTIONS} from './actions.js'
 import {STORE} from './store.js'
-
+import {DropDownBox} from '../components/component-filter.js'
 export const ViewController = React.createClass({
 
 	getInitialState: function(){
@@ -49,7 +49,7 @@ export const ViewController = React.createClass({
 
 		return (
 			<div>
-				<Sidebar/>
+				<DropDownBox/>
 				{componentToRender}
 			</div>
 		)

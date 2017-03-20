@@ -1,6 +1,6 @@
 import Backbone from 'backbone'
 
-export const SermonModel = Backbone.model.extend({
+export const SermonModel = Backbone.Model.extend({
    urlRoot: 'api/sermons',
    idAttribute: '_id'
 })
