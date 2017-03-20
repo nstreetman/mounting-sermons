@@ -26,13 +26,25 @@ export const ViewController = React.createClass({
 
 		switch(currentView){
 			case "HOME":
-				componentToRender = <h1 className="M-bg_success"> The Home Page</h1>
+				componentToRender = <h1> The Home Page</h1>
 				break;
 			case "LOGIN":
-				componentToRender =  <h1 className="M-bg_info">Login</h1>
+				componentToRender =  <h1>Login Form Page</h1>
+				break;
+			case "UPLOAD":
+				componentToRender = <h1>Upload Form Page</h1>
+				break;
+			case "SERIES":
+				componentToRender = <h1>Filtered by Series</h1>
+				break;
+			case "CLERGY":
+				componentToRender = <h1>Filtered by Clergy</h1>
+				break;
+			case "CAMPUS":
+				componentToRender = <h1>Filtered by Campus</h1>
 				break;
 			default:
-				componentToRender = <h1 className="M-bg_fail">Nothing found!</h1>
+				componentToRender = <h1>Nothing found!</h1>
 		}
 
 		return (
