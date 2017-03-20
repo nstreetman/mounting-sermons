@@ -1,6 +1,8 @@
 import React from 'react'
 import {ACTIONS} from '../actions.js'
-
+let textColor ={
+   color: 'black'
+}
 export const HomeView = React.createClass({
    // getInitialState: function(){
    //    return {
@@ -10,11 +12,8 @@ export const HomeView = React.createClass({
 
    render: function(){
       return(
-         <div className="col-sm-4">
-            <h1> something to show!!!! </h1>
+         <div className="M-bg-fail">
             <p> something more </p>
-            <p> even more </p>
-
          </div>
       )
    }
