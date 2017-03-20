@@ -19,7 +19,7 @@ export const DropDownBox = React.createClass({
 
          return (
             <div className="col-sm-4">
-               <h2 style={dropDownStyle}> whoa! </h2>
+               <h2 style={dropDownStyle}> seConsd! </h2>
             </div>
          )
       }

@@ -3,6 +3,9 @@ import {AppRouter} from './router.js'
 import {ACTIONS} from './actions.js'
 import {STORE} from './store.js'
 import {DropDownBox} from '../components/component-filter.js'
+import {FooterComponent} from '../components/component-footer.js'
+import {HeaderComponent} from '../components/component-header.js'
+
 export const ViewController = React.createClass({
 
 	getInitialState: function(){
@@ -49,7 +52,9 @@ export const ViewController = React.createClass({
 
 		return (
 			<div>
+				<HeaderComponent/>
 				<DropDownBox/>
+				<FooterComponent/>
 				{componentToRender}
 			</div>
 		)
