@@ -8,7 +8,6 @@ export const ACTIONS = {
     STORE.setStore('currentView', viewName)
   }
 },
-                        {
    saveNewSermon: function(uesrFormEntry){
       let newSermonInstance = new SermonModel()
       newSermonInstance.set(uesrFormEntry)
