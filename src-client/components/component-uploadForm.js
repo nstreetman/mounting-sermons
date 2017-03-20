@@ -25,7 +25,28 @@ _handleSermonSubmit: function(evt){
 
 )
 }
+<form class="M-form-group M-grid">
+<div class="form-field M-sm-12-of-12 M-md-6-of-12">
+    <label>Clergy</label>
+    <select>
+      <option value="Warner">'The Rev. Chris Warner'</option>
+      <option value="Norris">'The Rev. Sean Norris'</option>
+      <option value="Spencer">'The Rev. Trevor Spencer'</option>
+      <option value="Bennett">'The Rev. Jonathan Bennett'</option>
+  </select>
+</div>
 
+   <div class="form-field M-sm-12-of-12 M-md-6-of-12">
+       <label>Series</label>
+       <select>
+         <option value="GenHearts">'Generous Hearts'</option>
+         <option value="LifeTogether">'Life Together'</option>
+         <option value="Formed">'Formed'</option>
+         <option value="CrazyBusy">'Crazy Busy'</option>
+     </select>
+   </div>
+
+</form>
 // })({
 //   el:'#app-container',
 //   events : {
