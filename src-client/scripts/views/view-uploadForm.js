@@ -1,7 +1,7 @@
 import React from 'react'
 import {ACTIONS} from '../actions.js'
 import {STORE} from '../store.js'
-import {uploadFormComponent} from './components/component-uploadForm.js'
+import {uploadFormComponent} from '../components/component-uploadForm.js'
 
 export const UploadFormView = React.createClass({
 
