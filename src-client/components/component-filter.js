@@ -14,19 +14,17 @@ let dropStyle= {
 	background: '#ddd',
 	border: '1px solid #333'
 }
-export const SideBarAnon = React.createClass({
-   _handleFilterClick: function(evt){
-      let clickedRoute = evt.target.dataset.route
-      let routeMapping = {
-         "CLERGY" : 'clergy'
-         "CAMPUS" : 'campus'
-         "SERIES" : 'series'
-      }
-      ACTIONS.routeTo(routeMapping[clickedRoute])
-   },
-   
-})
+
 export const DropDownBox = React.createClass({
+   // _makeFilterList: function(evt){
+   //    evt.preventDefault();
+   //    let fromEl = evt.target
+   //    let filterValsObject = {
+   //       clergy: 'something',
+   //       campus: 'something else',
+   //       series: 'something more'
+   //    }
+   // },
       render: function(){
 
          return (
