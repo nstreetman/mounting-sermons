@@ -2,14 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // let footerStyle = {
-//   background-color: '#333'
-//   height: '15%'
+//   background-color: '#333',
+//   height: '15%',
 // }
-//
+
 // let buttonStyle {
-//   border: '2px solid #fff'
-// 	background-color: '#333'
-// 	color: '#fff'
+//   border: '2px solid #fff',
+// 	background-color: '#333',
+// 	color: '#fff',
 // }
 
 export const FooterComponent = React.createClass({
@@ -24,7 +24,11 @@ export const FooterComponent = React.createClass({
 
          return(
 
+<<<<<<< HEAD
            <footer>
+=======
+
+>>>>>>> 784f9f91ff5261d28be5a7562d59a63a13547fc7
            <div className='footer_container'>
            <div className='container-fluid footer_content'>
            <div className='row options'>
@@ -45,7 +49,7 @@ export const FooterComponent = React.createClass({
            <p className='directions'>Church of the Holy Cross, 2520 Middle Street, Sullivan&#39;s Island, SC 29482 843-883-3586 info@HolyCross.net</p>
            <p className='designer_tag'>Designed by eCothran, bCallahan &#38; nStreetman &#169; 2017 | Powered by Coffee</p>
            </div>
-           </footer>
+
 
          )
       }
