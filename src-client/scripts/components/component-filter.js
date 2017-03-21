@@ -4,14 +4,12 @@ import {ACTIONS} from '../actions.js'
 
 let dropDownStyle ={
   position: 'fixed',
-	right:0, top: 150,
+	right:0, top: 130,
 	height: '50%',
-	background: 'red',
-	padding: 0,
-	width: '280px'
+	width: '200px'
 }
 let dropStyle= {
-	padding: '12px',
+	padding: '15px',
 	background: '#ddd',
 	border: '1px solid #333'
 }
