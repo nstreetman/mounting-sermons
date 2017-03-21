@@ -7,6 +7,7 @@ import {FooterComponent} from './components/component-footer.js'
 import {HeaderComponent} from './components/component-header.js'
 import {HomeView} from './views/view-home.js'
 import {UploadFormView} from './views/view-uploadForm.js'
+import {LoginFormView} from './views/view-login.js'
 import {SideBarAnon} from './components/component-filter.js'
 
 
@@ -37,7 +38,7 @@ export const ViewController = React.createClass({
 				componentToRender = <HomeView/>
 				break;
 			case "LOGIN":
-				componentToRender =  <h1>Login Form Page</h1>
+				componentToRender =  <LoginFormView/>
 				break;
 			case "UPLOAD":
 
@@ -60,9 +61,8 @@ export const ViewController = React.createClass({
 			<div>
 				<HeaderComponent/>
 				<SideBarAnon/>
-				<FooterComponent/>
 				{componentToRender}
-
+				<FooterComponent/>
 			</div>
 		)
 

@@ -20,10 +20,15 @@ render: function(){
 
 <form className="M-form-group M-grid">
    <div>
+   <label>Email:</label>
       <input type="email"></input>
    </div>
    <div>
+      <label>Password:</label>
       <input type="password"></input>
+   </div>
+   <div>
+      <input type="submit"></input>
    </div>
 </form>
 )
