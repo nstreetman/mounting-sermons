@@ -7,6 +7,7 @@ export const ACTIONS = {
   setView: function(viewName){
     STORE.setStore('currentView', viewName)
   },
+  
    saveNewSermon: function(userFormEntry){
       let newSermonInstance = new SermonModel()
       newSermonInstance.set(userFormEntry)
