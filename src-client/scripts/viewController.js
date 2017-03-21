@@ -2,11 +2,12 @@ import React from 'react'
 import {AppRouter} from './router.js'
 import {ACTIONS} from './actions.js'
 import {STORE} from './store.js'
-import {DropDownBox} from '../components/component-filter.js'
-import {FooterComponent} from '../components/component-footer.js'
-import {HeaderComponent} from '../components/component-header.js'
+import {DropDownBox} from './components/component-filter.js'
+import {FooterComponent} from './components/component-footer.js'
+import {HeaderComponent} from './components/component-header.js'
 import {HomeView} from './views/view-home.js'
 import {UploadFormView} from './views/view-uploadForm.js'
+
 
 export const ViewController = React.createClass({
 
@@ -29,15 +30,17 @@ export const ViewController = React.createClass({
 		let currentView = this.state.currentView
 		let componentToRender
 
+
 		switch(currentView){
 			case "HOME":
-				componentToRender = <h1>{HomeView}</h1>
+				componentToRender = <HomeView/>
 				break;
 			case "LOGIN":
 				componentToRender =  <h1>Login Form Page</h1>
 				break;
 			case "UPLOAD":
-				componentToRender = <h1>{UploadFormView}</h1>
+
+				componentToRender = <UploadFormView/>
 				break;
 			case "SERIES":
 				componentToRender = <h1>Filtered by Series</h1>
@@ -54,10 +57,11 @@ export const ViewController = React.createClass({
 
 		return (
 			<div>
-				// <HeaderComponent/>
+				<HeaderComponent/>
 				<DropDownBox/>
-				// <FooterComponent/>
+				<FooterComponent/>
 				{componentToRender}
+
 			</div>
 		)
 
