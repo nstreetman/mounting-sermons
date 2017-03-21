@@ -1,16 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// let footerStyle = {
-//   background-color: '#333',
-//   height: '15%',
-// }
 
-// let buttonStyle {
-//   border: '2px solid #fff',
-// 	background-color: '#333',
-// 	color: '#fff',
-// }
+
 
 export const FooterComponent = React.createClass({
    // _makeFooter: function(evt){

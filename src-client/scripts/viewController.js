@@ -2,11 +2,12 @@ import React from 'react'
 import {AppRouter} from './router.js'
 import {ACTIONS} from './actions.js'
 import {STORE} from './store.js'
-import {DropDownBox} from './components/component-filter.js'
+
 import {FooterComponent} from './components/component-footer.js'
 import {HeaderComponent} from './components/component-header.js'
 import {HomeView} from './views/view-home.js'
 import {UploadFormView} from './views/view-uploadForm.js'
+import {SideBarAnon} from './components/component-filter.js'
 
 
 export const ViewController = React.createClass({
@@ -58,7 +59,7 @@ export const ViewController = React.createClass({
 		return (
 			<div>
 				<HeaderComponent/>
-				<DropDownBox/>
+				<SideBarAnon/>
 				<FooterComponent/>
 				{componentToRender}
 

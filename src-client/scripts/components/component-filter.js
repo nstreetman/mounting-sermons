@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {ACTIONS} from '../actions.js'
 
 let dropDownStyle ={
   position: 'fixed',
@@ -15,29 +16,35 @@ let dropStyle= {
 	border: '1px solid #333'
 }
 
-export const DropDownBox = React.createClass({
-   // _makeFilterList: function(evt){
-   //    evt.preventDefault();
-   //    let fromEl = evt.target
-   //    let filterValsObject = {
-   //       clergy: 'something',
-   //       campus: 'something else',
-   //       series: 'something more'
-   //    }
-   // },
-      render: function(){
-
-         return (
-            <div style={dropDownStyle}>
-               <ul style={{listStyleType: 'none', padding: 0}}>
-                  <button><li style={dropStyle} data-route="CLERGY">Clergy</li></button>
-                  <button><li style={dropStyle} data-route="CAMPUS">Campus</li></button>
-                  <button><li style={dropStyle} data-route="SERIES">Series</li></button>
-               </ul>
-            </div>
-         )
+export const SideBarAnon = React.createClass({
+   _handleFilterClick: function(evt){
+      evt.preventDefault
+      let clickedRoute = evt.target.dataset.route
+      let routeMapping = {
+         "CLERGY" : 'clergy',
+         "CAMPUS" : 'campus',
+         "SERIES" : 'series'
       }
+      ACTIONS.routeTo(routeMapping[clickedRoute])
+   },
+
+   render: function(){
+      return (
+         <div style={dropDownStyle}>
+         <ul style={{listStyleType: 'none', padding: 0}}>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">Clergy</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Campus</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Series</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="FORM">Series</li>
+         </ul>
+      </div>
+   )
+   }
 })
+
+
+
+
 
 
 
