@@ -2,7 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 let footerStyle = {
-   color: 'red'
+  backgroundcolor: '#333',
+  height: '15%'
+},
+
+let buttonStyle {
+  border: '2px solid #fff',
+	backgroundcolor: '#333',
+	color: '#fff'
 }
 
 export const FooterComponent = React.createClass({
@@ -16,9 +23,30 @@ export const FooterComponent = React.createClass({
       render: function(){
 
          return(
-            <div className="container">
-               <h2 style={footerStyle}> footer Component </h2>
-            </div>
+
+           <footer style={footerStyle}>
+           <div style='text-align:center;' className='footer_container'>
+           <div className='container-fluid footer_content'>
+           <div className='row options'>
+               <div className='col-sm-4 directory'>
+                 <button className='btn btn-default'>CHURCH DIRECTORY</button>
+               </div>
+               <div className='col-sm-4 tithe'>
+                 <button className='btn btn-default'>GIVE ONLINE HERE</button>
+               </div>
+               <div className='col-sm-4 social'>
+                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-facebook" aria-hidden="true"></i></button>
+                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-twitter" aria-hidden="true"></i></button>
+                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-vimeo" aria-hidden="true"></i></button>
+                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-flickr" aria-hidden="true"></i></button>
+               </div>
+             </div>
+           </div>
+           <p className='directions'>Church of the Holy Cross, 2520 Middle Street, Sullivan&#39;s Island, SC 29482 843-883-3586 info@HolyCross.net</p>
+           <p className='designer_tag'>Designed by eCothran, bCallahan &#38; nStreetman &#169; 2017 | Powered by Coffee</p>
+           </div>
+           </footer>
+
          )
       }
 })

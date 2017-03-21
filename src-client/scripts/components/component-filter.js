@@ -16,30 +16,30 @@ let dropStyle= {
 }
 export const SideBarAnon = React.createClass({
    _handleFilterClick: function(evt){
+      evt.preventDefault
       let clickedRoute = evt.target.dataset.route
       let routeMapping = {
-         "CLERGY" : 'clergy'
-         "CAMPUS" : 'campus'
+         "CLERGY" : 'clergy',
+         "CAMPUS" : 'campus',
          "SERIES" : 'series'
       }
       ACTIONS.routeTo(routeMapping[clickedRoute])
    },
-   
-})
-export const DropDownBox = React.createClass({
-      render: function(){
 
-         return (
-            <div style={dropDownStyle}>
-               <ul style={{listStyleType: 'none', padding: 0}}>
-                  <li style={dropStyle} data-route="CLERGY">Clergy</li>
-                  <li style={dropStyle} data-route="CAMPUS">Campus</li>
-                  <li style={dropStyle} data-route="SERIES">Series</li>
-               </ul>
-            </div>
-         )
-      }
+   render: function(){
+      return <div style={dropDownStyle}>
+         <ul style={{listStyleType: 'none', padding: 0}}>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">Clergy</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Campus</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Series</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="LOGIN">Series</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="FORM">Series</li>
+         </ul>
+      </div>
+   }
 })
+
+
 
 
 
