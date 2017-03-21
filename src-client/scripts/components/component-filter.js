@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {ACTIONS} from '../actions.js'
 
 let dropDownStyle ={
   position: 'fixed',
@@ -14,6 +15,7 @@ let dropStyle= {
 	background: '#ddd',
 	border: '1px solid #333'
 }
+
 export const SideBarAnon = React.createClass({
    _handleFilterClick: function(evt){
       evt.preventDefault
@@ -27,17 +29,20 @@ export const SideBarAnon = React.createClass({
    },
 
    render: function(){
-      return <div style={dropDownStyle}>
+      return (
+         <div style={dropDownStyle}>
          <ul style={{listStyleType: 'none', padding: 0}}>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">Clergy</li>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Campus</li>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Series</li>
-            <li onClick={this._handleFilterClick} style={dropStyle} data-route="LOGIN">Series</li>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="FORM">Series</li>
          </ul>
       </div>
+   )
    }
 })
+
+
 
 
 
