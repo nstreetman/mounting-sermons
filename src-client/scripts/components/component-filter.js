@@ -23,7 +23,7 @@ export const SideBarAnon = React.createClass({
       let routeMapping = {
          "CLERGY" : 'clergy',
          "CAMPUS" : 'campus',
-         "SERIES" : 'series'
+         "SERIES" : 'series',
       }
       ACTIONS.routeTo(routeMapping[clickedRoute])
    },
@@ -35,7 +35,6 @@ export const SideBarAnon = React.createClass({
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">Clergy</li>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Campus</li>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Series</li>
-            <li onClick={this._handleFilterClick} style={dropStyle} data-route="FORM">Series</li>
          </ul>
       </div>
    )

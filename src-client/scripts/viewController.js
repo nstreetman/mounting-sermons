@@ -6,6 +6,9 @@ import {STORE} from './store.js'
 import {FooterComponent} from './components/component-footer.js'
 import {HeaderComponent} from './components/component-header.js'
 import {HomeView} from './views/view-home.js'
+import {ClergyView} from './views/view-byClergy.js'
+import {CampusView} from './views/view-byCampus.js'
+import {SeriesView} from './views/view-bySeries.js'
 import {UploadFormView} from './views/view-uploadForm.js'
 import {LoginFormView} from './views/view-login.js'
 import {SideBarAnon} from './components/component-filter.js'
@@ -45,13 +48,13 @@ export const ViewController = React.createClass({
 				componentToRender = <UploadFormView/>
 				break;
 			case "SERIES":
-				componentToRender = <h1>Filtered by Series</h1>
+				componentToRender = <SeriesView/>
 				break;
 			case "CLERGY":
-				componentToRender = <h1>Filtered by Clergy</h1>
+				componentToRender = <ClergyView/>
 				break;
 			case "CAMPUS":
-				componentToRender = <h1>Filtered by Campus</h1>
+				componentToRender = <CampusView/>
 				break;
 			default:
 				componentToRender = <h1>Nothing found!</h1>
