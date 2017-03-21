@@ -24,11 +24,6 @@ export const FooterComponent = React.createClass({
 
          return(
 
-<<<<<<< HEAD
-           <footer>
-=======
-
->>>>>>> 784f9f91ff5261d28be5a7562d59a63a13547fc7
            <div className='footer_container'>
            <div className='container-fluid footer_content'>
            <div className='row options'>

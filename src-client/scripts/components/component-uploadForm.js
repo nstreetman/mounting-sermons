@@ -54,9 +54,17 @@ render: function(){
    </div>
 
    <div>
+      <label>Date of Sermon</label>
       <input type='date'></input>
    </div>
-   <input type="submit" className="btn btn-primary"/>
+
+   <div>
+      <input type="file"></input>
+   </div>
+
+   <div>
+      <input type="submit"></input>
+   </div>
 </form>
 )
 }
