@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 let dropDownStyle ={
-   position: 'fixed',
+  position: 'fixed',
 	right:0, top: 150,
 	height: '50%',
 	background: 'red',
