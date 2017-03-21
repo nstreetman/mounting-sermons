@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-let footerStyle = {
-  background-color: '#333'
-  height: '15%'
-}
-
-let buttonStyle {
-  border: '2px solid #fff'
-	background-color: '#333'
-	color: '#fff'
-}
+// let footerStyle = {
+//   background-color: '#333'
+//   height: '15%'
+// }
+//
+// let buttonStyle {
+//   border: '2px solid #fff'
+// 	background-color: '#333'
+// 	color: '#fff'
+// }
 
 export const FooterComponent = React.createClass({
    // _makeFooter: function(evt){
@@ -24,8 +24,8 @@ export const FooterComponent = React.createClass({
 
          return(
 
-           <footer style={footerStyle}>
-           <div style='text-align:center;' className='footer_container'>
+           <footer>
+           <div className='footer_container'>
            <div className='container-fluid footer_content'>
            <div className='row options'>
                <div className='col-sm-4 directory'>
@@ -35,10 +35,10 @@ export const FooterComponent = React.createClass({
                  <button className='btn btn-default'>GIVE ONLINE HERE</button>
                </div>
                <div className='col-sm-4 social'>
-                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-facebook" aria-hidden="true"></i></button>
-                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-twitter" aria-hidden="true"></i></button>
-                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-vimeo" aria-hidden="true"></i></button>
-                 <button style='border-radius: %50;' className='btn btn-default socialbtn'><i className="fa fa-flickr" aria-hidden="true"></i></button>
+                 <button className='btn btn-default socialbtn'><i className="fa fa-facebook" aria-hidden="true"></i></button>
+                 <button className='btn btn-default socialbtn'><i className="fa fa-twitter" aria-hidden="true"></i></button>
+                 <button className='btn btn-default socialbtn'><i className="fa fa-vimeo" aria-hidden="true"></i></button>
+                 <button className='btn btn-default socialbtn'><i className="fa fa-flickr" aria-hidden="true"></i></button>
                </div>
              </div>
            </div>
