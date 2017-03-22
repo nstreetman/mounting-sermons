@@ -4,7 +4,7 @@ import {ACTIONS} from '../actions.js'
 
 let dropDownStyle ={
   position: 'fixed',
-	right:0, top: 130,
+	right:'0px', top: '200px',
 	height: '50%',
 	width: '200px'
 }
