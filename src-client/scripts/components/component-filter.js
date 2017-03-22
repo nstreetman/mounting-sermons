@@ -5,7 +5,7 @@ import {ACTIONS} from '../actions.js'
 let dropDownStyle ={
   position: 'fixed',
 	right:'0px', top: '200px',
-	height: '50%',
+	height: '60%',
 	width: '200px'
 }
 let dropStyle= {
