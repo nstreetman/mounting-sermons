@@ -13,7 +13,7 @@ export const HomeView = React.createClass({
    render: function(){
       return(
          <div className="M-bg-fail">
-            <p> something more </p>
+            <p> Default view: See unfiltered sermons from recent weeks here </p>
          </div>
       )
    }

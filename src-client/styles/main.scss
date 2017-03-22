@@ -3,9 +3,7 @@
 }
 
 body{
-	font-family: Helvetica;
-	// color: #fff;
-	font-size: 0;
+	font-family: 'Playfair Display', serif;
 }
 
 img {
@@ -14,12 +12,28 @@ img {
 }
 
 h1{
+	font-family: 'Josefin Sans', sans-serif;
 	text-align: center;
 }
 
-footer {
-	background-color: #333;
-	height: 15%;
+h2 {
+	font-family: 'Josefin Sans', sans-serif;
+	text-align: center;
+}
+
+h3 {
+	font-family: 'Josefin Sans', sans-serif;
+	text-align: center;
+}
+.container-fluid {
+	display: inline-block;
+}
+.footer_container{
+	background-color: rgba(33,33,33,1);
+	color: #fff;
+	height: 200px;
+	padding-top: 50px;
+	margin-top: 100px;
 }
 
 #app-container{
@@ -30,11 +44,15 @@ footer {
 	height: 100vh;
 }
 
-.header{
-	background-color: green;
-	height: 15%;
+.header {
+	background-image: url("../images/holycross-si-services-08.jpg");
+	background-size: cover;
+	margin-bottom: 25px;
 }
-
+.top-menu{
+	display: inline-block;
+	padding: 25px;
+}
 .view {
 	background-color: yellow;
 	text-align: center;
@@ -60,7 +78,7 @@ footer {
 
 .footer_container .btn-default {
 	border: 2px solid #fff;
-	background-color: #333;
+	background-color: rgba(33,33,33,1);
 	color: #fff;
 }
 

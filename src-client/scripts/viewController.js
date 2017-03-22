@@ -61,12 +61,11 @@ export const ViewController = React.createClass({
 		}
 
 		return (
-			<div>
-				<HeaderComponent/>
+			<div><HeaderComponent/>
 				<SideBarAnon/>
 				{componentToRender}
 				<FooterComponent/>
-			</div>
+				</div>
 		)
 
 	}
