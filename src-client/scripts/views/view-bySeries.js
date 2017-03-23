@@ -6,7 +6,6 @@ export const SeriesView = React.createClass({
       return(
          <div className="seriesView">
             <h2>Filtered by Series view: </h2>
-            <YouTubeAudio videoId="k4kMhn4z9-4" name="Mr. Rev Chris Warner" title="Daniel Island" collection="Formed in Christ"/>
             <h3>
                Here they should see sermons from a particular series that they have
                selected from a dropdown list of sermon series options on the filter bar
