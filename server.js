@@ -3,14 +3,14 @@
 global.chalk = require('chalk')
 global.PROJECT_NAME = require('./src-server/config/projectName.js')
 
-if(typeof PROJECT_NAME !== 'string' ){ 
+if(typeof PROJECT_NAME !== 'string' ){
 	require('./src-server/cli/setProjectName.js')
-	throw new Error(`\n${chalk.bgRed.bold('There must be a project name exported from :')} ${chalk.grey.bold('./src-server/config/projectName.js')} \n ${chalk.bgWhite.black(' you must execute: ')} ${chalk.cyan.bold('npm run set-project-name')}` ) 
+	throw new Error(`\n${chalk.bgRed.bold('There must be a project name exported from :')} ${chalk.grey.bold('./src-server/config/projectName.js')} \n ${chalk.bgWhite.black(' you must execute: ')} ${chalk.cyan.bold('npm run set-project-name')}` )
 }
 
 const	bodyParser = require('body-parser')
 const express = require('express') //import express web server
-const renderFile = require('ejs').renderFile //import view templating engine 
+const renderFile = require('ejs').renderFile //import view templating engine
 
 const passport = require('passport')
 const session = require('express-session')
@@ -45,21 +45,6 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 configurePassport_Local()
-
-//configure webpack
-if( process.env.NODE_ENV === 'development' ){
-	const webpack = require('webpack');
-	const webpackMiddleware = require('webpack-dev-middleware');
-	const webpackConfig = require('./webpack.config.js');
-	const webpackCompiler = webpack(webpackConfig);
-
-	app.use(webpackMiddleware(webpackCompiler, {
-	   noInfo: true,
-	   publicPath: webpackConfig.output.publicPath
-	}));
-}
-
-
 
 
 // set port if exists in environment for heroku or live site, else set to 3000 for dev

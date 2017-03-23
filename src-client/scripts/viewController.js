@@ -2,6 +2,7 @@ import React from 'react'
 import {AppRouter} from './router.js'
 import {ACTIONS} from './actions.js'
 import {STORE} from './store.js'
+import YouTubeAudio from 'react-youtube-audio'
 
 import {FooterComponent} from './components/component-footer.js'
 import {HeaderComponent} from './components/component-header.js'

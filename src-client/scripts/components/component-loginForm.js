@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Backbone from 'Backbone'
+import Backbone from 'backbone'
 import {UserModel} from '../models/model-user.js'
 import {ACTIONS} from '../actions.js'
 
