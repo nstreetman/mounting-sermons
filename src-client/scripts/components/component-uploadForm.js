@@ -16,12 +16,13 @@ _handleSermonSubmit: ()=>{
     campus: "Daniel Island",
     series: "Formed In Christ"
   }
+  ACTIONS.saveNewSermon(formValsObj)
 },
 
 render: function(){
     return (
 
-<form className="M-form-group M-grid">
+<form name="uploadform" onSubmit={this._handleSermonSubmit} className="M-form-group M-grid">
 <div className="form-field M-sm-12-of-12 M-md-6-of-12">
     <label>Clergy</label>
     <select>
@@ -64,6 +65,7 @@ render: function(){
 
    <div>
       <input type="submit"></input>
+
    </div>
 </form>
 )
