@@ -26,6 +26,7 @@ export const FooterComponent = React.createClass({
                  <button className='btn btn-default'>GIVE ONLINE HERE</button>
                </div>
                <div className='col-sm-4 social'>
+
                  <button className='btn btn-default socialbtn'><i className="fa fa-facebook" aria-hidden="true"></i></button>
                  <button className='btn btn-default socialbtn'><i className="fa fa-twitter" aria-hidden="true"></i></button>
                  <button className='btn btn-default socialbtn'><i className="fa fa-vimeo" aria-hidden="true"></i></button>
