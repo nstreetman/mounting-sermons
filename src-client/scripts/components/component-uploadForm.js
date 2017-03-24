@@ -8,7 +8,7 @@ import {ACTIONS} from '../actions.js';
 
 export const UploadFormComponent = React.createClass({
 
-  _uploadToFileStack: function(evt){
+  _handleUploadToFileStack: function(evt){
     evt.preventDefault()
     let fileInputEl = evt.target.fileInput
     let theFile = fileInputEl.files[0]
@@ -36,7 +36,7 @@ export const UploadFormComponent = React.createClass({
   render: function(){
     return (
 
-      <form name="uploadform" onSubmit={this._uploadToFileStack}>
+      <form name="uploadform" onSubmit={this.handleUploadToFileStack}>
       <div className="form-field M-sm-12-of-12 M-md-6-of-12">
           <label>Clergy</label>
           <select>
