@@ -64,7 +64,6 @@ export const ViewController = React.createClass({
 
 		return (
 			<div><HeaderComponent/>
-				<AudioComponent/>
 				<SideBarAnon/>
 				{componentToRender}
 				<FooterComponent/>
