@@ -3,14 +3,9 @@ import YouTubeAudio from 'react-youtube-audio'
 import {ACTIONS} from '../actions'
 
 export const AudioComponent = React.createClass({
-   // getInitialState:function(){
-   //    return(
-   //
-   //    )
-   // }
-
-
-
+      _handleSongInfo: function(currentSongData){
+         
+      },
    render: function(){
       return (
          <div classname="YouTube">
