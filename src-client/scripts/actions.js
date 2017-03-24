@@ -10,7 +10,7 @@ export const ACTIONS = {
 
    saveNewSermon: function(userFormEntry){
      ACTIONS.uploadToFileStack(userFormEntry.fileUpload)
-
+   },
 
 
       // let newSermonInstance = new SermonModel()
@@ -29,7 +29,7 @@ export const ACTIONS = {
       // newSermonInstance.save().then(function(serverRes){
       //   ACTIONS.fetchAllSermons()
       // })
-   },
+  //  },
 
    fetchAllSermons: function(){
       let sermonCollInstance = new SermonCollection()
@@ -38,7 +38,7 @@ export const ACTIONS = {
 
    uploadToFileStack: function(){
        var client = filestack.init('AoR65q9vnRxqb5UWVJEGBz', { policy: 'policy', signature: 'signature' });
-       client.upload(file, uploadOptions, storeOptions);
+       client.upload(theFile);
 
    },
 

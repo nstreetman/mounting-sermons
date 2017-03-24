@@ -1,53 +1,42 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Backbone from 'backbone'
-import {SermonModel} from '../models/model-sermon.js'
-import {SermonCollection} from '../models/model-sermon.js'
-import {ACTIONS} from '../actions.js'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Backbone from 'backbone';
+import {SermonModel} from '../models/model-sermon.js';
+import {SermonCollection} from '../models/model-sermon.js';
+import {ACTIONS} from '../actions.js';
+
 
 export const UploadFormComponent = React.createClass({
 
-  _handleSermonSubmit: function(evt){
-    evt.preventDefault();
-    let formEl = evt.target
-    let formData= {
-      name: "The Rev. Chris Warner",
-      dateOfSermon: '12/12/10',
-      campus: "Daniel Island",
-      series: "Formed In Christ",
-      fileUpload: this.state.currentFileUploaded
-    }
-
-    console.log(formData)
-    ACTIONS.saveNewSermon(formData)
-  },
-
-  _handleFileUpload: function(evt){
-    let component= this
-    let fileInputEl=evt.target
-
-    let reader = new FileReader()
+  _uploadToFileStack: function(evt){
+    evt.preventDefault()
+    let fileInputEl = evt.target.fileInput
     let theFile = fileInputEl.files[0]
-
-    reader.addEventListener('load', function(evt){
-        console.log('file loaded! ...', evt.target.result)
-        component.setState({
-          currentFileUploaded  : evt.target.result
-        })
+    let client = filestack.init('AoR65q9vnRxqb5UWVJEGBz')
+    console.log('uploading file...')
+    client.upload(theFile).then(function(fileStackRes){
+      console.log(serverRes.url)
     })
-
-    // reader.addEventListener('progress', function(evt){
-    //     console.log('loading progress ...', evt.loaded, ' / ', evt.total)
-    // })
-
-    console.log('reading file contents...', theFile)
-    reader.readAsDataURL(theFile)
-
   },
+
+  // _handleSermonSubmit: function(evt){
+  //   evt.preventDefault();
+  //   let formEl = evt.target
+  //   let formData = {
+  //     name: "The Rev. Chris Warner",
+  //     dateOfSermon: '12/12/10',
+  //     campus: "Daniel Island",
+  //     series: "Formed In Christ",
+  //     fileUpload: "https://cdn.filestackcontent.com/YVjjnJKnSlWvsg01lnqH"
+  //   }
+  //
+  //   ACTIONS.saveNewSermon(formData)
+  // },
+
   render: function(){
     return (
 
-      <form name="uploadform" onSubmit={this._handleSermonSubmit} className="M-form-group M-grid">
+      <form name="uploadform" onSubmit={this._uploadToFileStack}>
       <div className="form-field M-sm-12-of-12 M-md-6-of-12">
           <label>Clergy</label>
           <select>
@@ -85,11 +74,11 @@ export const UploadFormComponent = React.createClass({
          </div>
 
          <div>
-            <input type="file" onChange={this._handleFileUpload}/>
+            <input type="file" name="fileInput"/>
          </div>
 
          <div>
-            <input type="submit"></input>
+            <input type="submit" value="Submit"/>
 
          </div>
       </form>
