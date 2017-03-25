@@ -46,7 +46,6 @@ export const ViewController = React.createClass({
 				componentToRender =  <LoginFormView/>
 				break;
 			case "UPLOAD":
-
 				componentToRender = <UploadFormView/>
 				break;
 			case "SERIES":

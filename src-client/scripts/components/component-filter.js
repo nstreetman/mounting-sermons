@@ -5,13 +5,16 @@ import {ACTIONS} from '../actions.js'
 let dropDownStyle ={
   position: 'fixed',
 	right:'0px', top: '200px',
-	height: '60%',
+	height: '250px',
 	width: '200px'
 }
 let dropStyle= {
 	padding: '15px',
-	background: '#ddd',
-	border: '1px solid #333'
+	background: '#fff',
+	border: '1px solid #eae',
+   color: 'black',
+   textAlign: 'center',
+   fontSize: '20px'
 }
 
 export const SideBarAnon = React.createClass({
@@ -22,6 +25,8 @@ export const SideBarAnon = React.createClass({
          "CLERGY" : 'clergy',
          "CAMPUS" : 'campus',
          "SERIES" : 'series',
+         "UPLOAD" : 'upload',
+         "LOGIN" : 'login'
       }
       ACTIONS.routeTo(routeMapping[clickedRoute])
    },
@@ -33,6 +38,8 @@ export const SideBarAnon = React.createClass({
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">Clergy</li>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Campus</li>
             <li onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Series</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="UPLOAD">Upload</li>
+            <li onClick={this._handleFilterClick} style={dropStyle} data-route="LOGIN">LOGIN</li>
          </ul>
       </div>
    )
