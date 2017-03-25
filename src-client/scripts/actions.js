@@ -8,9 +8,9 @@ export const ACTIONS = {
     STORE.setStore('currentView', viewName)
   },
 
-   saveNewSermon: function(userFormEntry){
-     ACTIONS.uploadToFileStack(userFormEntry.fileUpload)
-   },
+  //  saveNewSermon: function(userFormEntry){
+  //    ACTIONS.uploadToFileStack(userFormEntry.fileUpload)
+  //  },
 
 
       // let newSermonInstance = new SermonModel()
@@ -36,11 +36,11 @@ export const ACTIONS = {
       return SermonCollInstance.fetch()
    },
 
-   uploadToFileStack: function(){
-       var client = filestack.init('AoR65q9vnRxqb5UWVJEGBz', { policy: 'policy', signature: 'signature' });
-       client.upload(theFile);
-
-   },
+  //  uploadToFileStack: function(){
+  //      var client = filestack.init('AoR65q9vnRxqb5UWVJEGBz', { policy: 'policy', signature: 'signature' });
+  //      client.upload(theFile);
+   //
+  //  },
 
    uploadToYoutube: function(){
 

@@ -19,25 +19,23 @@ export const UploadFormComponent = React.createClass({
     })
   },
 
-  // _handleSermonSubmit: function(evt){
-  //   evt.preventDefault();
-  //   let formEl = evt.target
-  //   let formData = {
-  //     name: "The Rev. Chris Warner",
-  //     dateOfSermon: '12/12/10',
-  //     campus: "Daniel Island",
-  //     series: "Formed In Christ",
-  //     fileUpload: "https://cdn.filestackcontent.com/YVjjnJKnSlWvsg01lnqH"
-  //   }
-  //
-  //   ACTIONS.saveNewSermon(formData)
-  // },
+  _handleSermonSubmit: function(evt){
+    evt.preventDefault();
+    let formEl = evt.target
+    let formData = {
+      name: "The Rev. Chris Warner",
+      dateOfSermon: '12/12/10',
+      campus: "Daniel Island",
+      series: "Formed In Christ",
+      fileUpload: "https://cdn.filestackcontent.com/YVjjnJKnSlWvsg01lnqH"
+    }
+  },
 
   render: function(){
     return (
 
-      <form name="uploadform" onSubmit={this.handleUploadToFileStack}>
-      <div className="form-field M-sm-12-of-12 M-md-6-of-12">
+      <form name="uploadform" onSubmit={this._handleUploadToFileStack}>
+      <div className="form-field">
           <label>Clergy</label>
           <select>
             <option value="Warner">The Rev. Chris Warner</option>
@@ -48,7 +46,7 @@ export const UploadFormComponent = React.createClass({
         </select>
       </div>
 
-         <div className="form-field M-sm-12-of-12 M-md-6-of-12">
+         <div className="form-field">
              <label>Sermon Series</label>
              <select>
                <option value="GenHearts">Generous Hearts</option>
@@ -59,7 +57,7 @@ export const UploadFormComponent = React.createClass({
            </select>
          </div>
 
-         <div className="form-field M-sm-12-of-12 M-md-6-of-12">
+         <div className="form-field">
              <label>Campus</label>
              <select>
                <option value="SI">Sullivan&#8217;s Island</option>
