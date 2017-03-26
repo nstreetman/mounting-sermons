@@ -4,16 +4,16 @@ const apiRouter = Router()
 /*
  * NOTE: the model for the data-table should not have the name 'SomeModel'
  */
-let ExampleModel = require('../db/models/exampleModel.js')
-let apiController = require('../controllers/apiController.js')(ExampleModel)
+let SermonModel = require('../db/models/sermonModel.js')
+let apiController = require('../controllers/apiController.js')(SermonModel)
 let {	getMany, getOne, 	createOne,	updateOne, deleteOne} = apiController
 
 apiRouter
- .get('/item', getMany)
- .post('/item', createOne)
- .get('/item/:_id', getOne)
- .put('/item/:_id', updateOne)
- .delete('/item/:_id', deleteOne)
+ .get('/sermons', getMany)
+ .post('/sermons', createOne)
+ .get('/sermons/:_id', getOne)
+ .put('/sermons/:_id', updateOne)
+ .delete('/sermons/:_id', deleteOne)
 
  // TO DELETE ALL:
  // .delete("/resources/all/records", function(req, res){
