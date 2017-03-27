@@ -70,9 +70,9 @@ export const SideBarAnon = React.createClass({
          <div className='form-field'>
             <label>Search By:</label>
             <select name="searchType" onChange={this._handleFilterClick}>
-               <option data-route="SERIES">All</option>
-               <option data-route="SERIES">pastor</option>
-               <option data-route="SERIES">campus</option>
+               <option data-route="All">All</option>
+               <option data-route="PASTOR">pastor</option>
+               <option data-route="CAMPUS">campus</option>
                <option data-route="SERIES">series</option>
 
             </select>
