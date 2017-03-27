@@ -5,36 +5,49 @@ import {SermonModel} from '../models/model-sermon.js';
 import {SermonCollection} from '../models/model-sermon.js';
 import {ACTIONS} from '../actions.js';
 
+function log (serverRes){
+  console.log(serverRes)
+}
 
 export const UploadFormComponent = React.createClass({
-
-  _handleUploadToFileStack: function(evt){
+  _handleUploads: function(evt){
     evt.preventDefault()
     let fileInputEl = evt.target.fileInput
     let theFile = fileInputEl.files[0]
     let client = filestack.init('AoR65q9vnRxqb5UWVJEGBz')
     console.log('uploading file...')
     client.upload(theFile).then(function(fileStackRes){
-      console.log(serverRes.url)
-    })
-  },
+      console.log(fileStackRes)
 
-  _handleSermonSubmit: function(evt){
-    evt.preventDefault();
-    let formEl = evt.target
-    let formData = {
-      name: "The Rev. Chris Warner",
-      dateOfSermon: '12/12/10',
-      campus: "Daniel Island",
-      series: "Formed In Christ",
-      fileUpload: "https://cdn.filestackcontent.com/YVjjnJKnSlWvsg01lnqH"
-    }
+      // _handleSermonSubmit: function(evt){
+      //   evt.preventDefault();
+        // let formEl = evt.target
+
+    // YtApiModule.uploadMetaData(/*{...videoMetaData}*/).then(function(ytUploadToken){
+    //   theFile
+    // })
+
+    let sermonModel = new SermonModel()
+      sermonModel.set({
+      // let formData = {
+          pastor: 'The Rev. Chris Warner',
+          series: 'CrazyBusy',
+          campus: 'Daniel Island',
+          date: '12/12/10',
+          ytVideoId: 'a_tbxGZuukQ',
+          filestackUrl: fileStackRes.url
+      })
+    sermonModel.save().then(function(serverRes){
+      console.log (serverRes)
+
+    })
+  })
   },
 
   render: function(){
     return (
 
-      <form name="uploadform" onSubmit={this._handleUploadToFileStack}>
+      <form name="uploadform" onSubmit={this._handleUploads} method='post'>
       <div className="form-field">
           <label>Clergy</label>
           <select>
