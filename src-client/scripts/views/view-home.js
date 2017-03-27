@@ -24,7 +24,7 @@ export const HomeView = React.createClass({
                <p>Series Name: {sermObj.series}</p>
             </div>
             <div>
-               <YouTubeAudio/>
+               <YouTubeAudio videoId={sermObj.ytVideoId}/>
             </div>
          </div>
          )
