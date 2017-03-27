@@ -8,6 +8,12 @@ export const ACTIONS = {
     STORE.setStore('currentView', viewName)
   },
 
+  fetchAllSermons: function(){
+   console.log('fetching collections')
+
+   // STORE.setStore('allSermons', serverRes)
+  },
+
   //  saveNewSermon: function(userFormEntry){
   //    ACTIONS.uploadToFileStack(userFormEntry.fileUpload)
   //  },

@@ -29,18 +29,18 @@ export const ViewController = React.createClass({
 			let newStoreState = STORE.getStoreData()
 			vcComponent.setState(newStoreState)
 		})
-
+		ACTIONS.fetchAllSermons()
 		let router = new AppRouter()
 	},
 
 	render: function(){
 		let currentView = this.state.currentView
 		let componentToRender
-
+		console.log(this.state)
 
 		switch(currentView){
 			case "HOME":
-				componentToRender = <HomeView/>
+				componentToRender = <HomeView {...this.state}/>
 				break;
 			case "LOGIN":
 				componentToRender =  <LoginFormView/>
@@ -63,7 +63,6 @@ export const ViewController = React.createClass({
 
 		return (
 			<div><HeaderComponent/>
-				<SideBarAnon/>
 				{componentToRender}
 				<FooterComponent/>
 				</div>
