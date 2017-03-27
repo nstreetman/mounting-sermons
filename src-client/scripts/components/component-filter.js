@@ -42,10 +42,10 @@ export const SideBarAnon = React.createClass({
          return(
             <div className='form-field'>
                <label>Campus</label>
-               <select>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Sullivan Island</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Daniel Island</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">IOn</option>
+               <select name="CAMPUS" onChange={this._handleFilterClick}>
+                  <option data-route="CAMPUS">Sullivan Island</option>
+                  <option data-route="CAMPUS">Daniel Island</option>
+                  <option data-route="CAMPUS">IOn</option>
                </select>
             </div>
          )
@@ -53,11 +53,10 @@ export const SideBarAnon = React.createClass({
          return(
             <div className='form-field'>
                <label>Clergy</label>
-               <select name="CLERGY" onChange={this._handleFilterClick}>
-                  <option value="rev='chrisWarner'" onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">The Rev. Chris Warner</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">The Rev. Sean Morris</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">The Rev. Trevor Spencer</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">The Rev. Jonathan Bennett</option>
+               <select name="PASTOR" onChange={this._handleFilterClick}>
+                  <option data-route="PASTOR">Rev. Chris Warner</option>
+                  <option data-route="PASTOR">The Rev. Jonathan Bennett</option>
+                  <option data-route="PASTOR">The Rev. Sean Norris</option>
                </select>
             </div>
          )
@@ -65,12 +64,7 @@ export const SideBarAnon = React.createClass({
          return(
             <div className='form-field'>
                <label>Series</label>
-               <select name="SERIES" onChange={this._handleFilterClick}>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Genrous Hearts</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Life Together</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Formed</option>
-                  <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Crazy Busy</option>
-               </select>
+               <select name="SERIES" onChange={this._handleFilterClick} data-route="SERIES">Crazy Busy</select>
             </div>
          )
       }
@@ -83,14 +77,13 @@ export const SideBarAnon = React.createClass({
          <div className='form-field'>
             <label>Search By:</label>
             <select name="searchType" onChange={this._handleFilterClick}>
-               <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">All</option>
-               <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">pastor</option>
-               <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">campus</option>
-               <option onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">series</option>
+               <option data-route="SERIES">All</option>
+               <option data-route="SERIES">pastor</option>
+               <option data-route="SERIES">campus</option>
+               <option data-route="SERIES">series</option>
 
             </select>
          </div>
-
 
             {this._renderSecondDropDown()}
          </div>

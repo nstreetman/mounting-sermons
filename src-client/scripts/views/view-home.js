@@ -7,7 +7,7 @@ let textColor ={
 export const HomeView = React.createClass({
    getInitialState: function(){
       return {
-         searchType: "All",
+         searchType: "pastor",
          searchValue: ""
       }
    },
@@ -40,7 +40,7 @@ export const HomeView = React.createClass({
 
    render: function(){
       let filteredSermons = this.props.allSermons.filter(function(obj){
-         if(this.state.searchType === "All"){
+         if(this.state.searchType === "All" || this.state.searchValue === ""){
             return true
          }
          if(obj[this.state.searchType] === this.state.searchValue){
