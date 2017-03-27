@@ -3,14 +3,26 @@ import YouTubeAudio from 'react-youtube-audio'
 import {ACTIONS} from '../actions'
 
 export const AudioComponent = React.createClass({
-   _HandlingSeriesSermon: function(evt){
-      let selectedSeries = evt.target.dataset.route
-      console.log('pros#2', selectedSeries);
-
+   getInitialState: function(){
+      return{
+         series: 'SERIES'
+      }
    },
+   _handleNewSeries: function(evt){
+      evt.preventDefault();
+      let sermonEL = evt.target
+      let sermonElObj = {
+         campus: sermonEl.sermonElObj.campus,
+         clergy: sermonEl.sermonElObj.clergy,
+         series: sermonEl.sermonElObj.series
+      }
+      ACTIONS.saveNewSermon(sermonElObj)
+   },
+
+
    render: function(){
       return (
-         <div classname="YouTube">
+         <div className="YouTube">
             <YouTubeAudio/>
          </div>
       )
