@@ -1,30 +1,37 @@
 import React from 'react'
 import {ACTIONS} from '../actions.js'
 import {SideBarAnon} from '../components/component-filter.js'
-let textColor ={
-   color: 'black'
-}
+import YouTubeAudio from 'react-youtube-audio'
+
+
 export const HomeView = React.createClass({
    getInitialState: function(){
       return {
-         searchType: "pastor",
+         searchType: "All",
          searchValue: ""
       }
    },
+
    _showSermons: function(data){
-      // data.map(function(sermObj){
-      //    return(
-      //       <h1></h1>
-      //    )
-      // })
-      return (
-         <h1>i'm the sermon</h1>
-      )
+      console.log(data);
+      return data.map(function(sermObj){
+         return(
+         <div>
+         all sermon info inside containing div
+         </div>
+
+         )
+      })
+      // return (
+      //    <YouTubeAudio/>
+      // )
    },
+
    _updateType: function(value){
       this.setState({searchType: value})
    },
    _updateSearchValue: function(value){
+      console.log(value)
       this.setState({searchValue: value})
    },
    // {
@@ -39,15 +46,17 @@ export const HomeView = React.createClass({
 // },
 
    render: function(){
+
+      console.log('whoa', this.state)
+      let component = this
       let filteredSermons = this.props.allSermons.filter(function(obj){
-         if(this.state.searchType === "All" || this.state.searchValue === ""){
+         if(component.state.searchType === "All" || component.state.searchValue === ""){
             return true
          }
-         if(obj[this.state.searchType] === this.state.searchValue){
+         if(obj[component.state.searchType] === component.state.searchValue){
             return true
          }
       })
-      console.log(this.state)
       return(
          <div className="M-bg-fail">
             <SideBarAnon updateValue={this._updateSearchValue}
@@ -62,4 +71,5 @@ export const HomeView = React.createClass({
          </div>
       )
    }
+
 })

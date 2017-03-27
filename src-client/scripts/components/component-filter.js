@@ -23,17 +23,10 @@ export const SideBarAnon = React.createClass({
    _handleFilterClick: function(evt){
       evt.preventDefault()
       this.props.updateSearch(evt.target.value)
-      // let clickedRoute = evt.target.value
-      // console.log(evt.target.name)
-      // let routeMapping = {
-      //    "CLERGY" : 'clergy',
-      //    "CAMPUS" : 'campus',
-      //    "SERIES" : 'series',
-      //    "UPLOAD" : 'upload',
-      //    "LOGIN" : 'login'
-      // }
-      // localhost:3000#/filter/clergy="chrisWarner"/campus=""/series=""
-      // ACTIONS.routeTo(routeMapping[clickedRoute])
+   },
+   _handleSelectedSearch: function(evt){
+      evt.preventDefault()
+      this.props.updateValue(evt.target.value)
    },
    _renderSecondDropDown: function(){
       if(this.props.searchType === 'All'){
@@ -42,7 +35,7 @@ export const SideBarAnon = React.createClass({
          return(
             <div className='form-field'>
                <label>Campus</label>
-               <select name="CAMPUS" onChange={this._handleFilterClick}>
+               <select name="CAMPUS" onChange={this._handleSelectedSearch}>
                   <option data-route="CAMPUS">Sullivan Island</option>
                   <option data-route="CAMPUS">Daniel Island</option>
                   <option data-route="CAMPUS">IOn</option>
@@ -53,14 +46,14 @@ export const SideBarAnon = React.createClass({
          return(
             <div className='form-field'>
                <label>Clergy</label>
-               <select name="PASTOR" onChange={this._handleFilterClick}>
+               <select name="PASTOR" onChange={this._handleSelectedSearch}>
                   <option data-route="PASTOR">Rev. Chris Warner</option>
                   <option data-route="PASTOR">The Rev. Jonathan Bennett</option>
                   <option data-route="PASTOR">The Rev. Sean Norris</option>
                </select>
             </div>
          )
-      }else{
+      }if(this.props.searchType === "series"){
          return(
             <div className='form-field'>
                <label>Series</label>
