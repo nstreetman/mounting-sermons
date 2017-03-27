@@ -18,38 +18,68 @@ let dropStyle= {
 }
 
 export const SideBarAnon = React.createClass({
+
+
    _handleFilterClick: function(evt){
-      evt.preventDefault
-      let clickedRoute = evt.target.dataset.route
-      let routeMapping = {
-         "CLERGY" : 'clergy',
-         "CAMPUS" : 'campus',
-         "SERIES" : 'series',
-         "UPLOAD" : 'upload',
-         "LOGIN" : 'login'
+      evt.preventDefault()
+      this.props.updateSearch(evt.target.value)
+   },
+   _handleSelectedSearch: function(evt){
+      evt.preventDefault()
+      this.props.updateValue(evt.target.value)
+   },
+   _renderSecondDropDown: function(){
+      if(this.props.searchType === 'All'){
+         return
+      }if(this.props.searchType === 'campus'){
+         return(
+            <div className='form-field'>
+               <label>Campus</label>
+               <select name="CAMPUS" onChange={this._handleSelectedSearch}>
+                  <option data-route="CAMPUS">Sullivan Island</option>
+                  <option data-route="CAMPUS">Daniel Island</option>
+                  <option data-route="CAMPUS">IOn</option>
+               </select>
+            </div>
+         )
+      }if(this.props.searchType === "pastor"){
+         return(
+            <div className='form-field'>
+               <label>Clergy</label>
+               <select name="PASTOR" onChange={this._handleSelectedSearch}>
+                  <option data-route="PASTOR">Rev. Chris Warner</option>
+                  <option data-route="PASTOR">The Rev. Jonathan Bennett</option>
+                  <option data-route="PASTOR">The Rev. Sean Norris</option>
+               </select>
+            </div>
+         )
+      }if(this.props.searchType === "series"){
+         return(
+            <div className='form-field'>
+               <label>Series</label>
+               <select name="SERIES" onChange={this._handleFilterClick} data-route="SERIES">Crazy Busy</select>
+            </div>
+         )
       }
-      ACTIONS.routeTo(routeMapping[clickedRoute])
    },
 
    render: function(){
+      console.log(this.props.searchType)
       return (
-         <div style={dropDownStyle}>
-         <ul style={{listStyleType: 'none', padding: 0}}>
-            <li onClick={this._handleFilterClick} style={dropStyle} data-route="CLERGY">Clergy</li>
-            <li onClick={this._handleFilterClick} style={dropStyle} data-route="CAMPUS">Campus</li>
-            <li onClick={this._handleFilterClick} style={dropStyle} data-route="SERIES">Series</li>
-            <li onClick={this._handleFilterClick} style={dropStyle} data-route="UPLOAD">Upload</li>
-            <li onClick={this._handleFilterClick} style={dropStyle} data-route="LOGIN">LOGIN</li>
-         </ul>
-      </div>
+         <div>
+         <div className='form-field'>
+            <label>Search By:</label>
+            <select name="searchType" onChange={this._handleFilterClick}>
+               <option data-route="SERIES">All</option>
+               <option data-route="SERIES">pastor</option>
+               <option data-route="SERIES">campus</option>
+               <option data-route="SERIES">series</option>
+
+            </select>
+         </div>
+
+            {this._renderSecondDropDown()}
+         </div>
    )
    }
 })
-
-
-
-
-
-
-
-// ReactDOM.render(<form/>, document.querySelector('#col-sm-4'));

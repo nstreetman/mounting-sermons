@@ -10,6 +10,7 @@ export const AppRouter = Backbone.Router.extend({
     'campus' : 'routeToCampus',
     'clergy' : 'routeToClergy',
     'series' : 'routeToSeries',
+	 'search/:clergy/:series/:campus': 'routeToSeries',
     'upload': 'routeToUpload',
 		'login': 'routeToLogin',
 		'' : 'routeToHome',
@@ -24,7 +25,8 @@ export const AppRouter = Backbone.Router.extend({
     ACTIONS.setView("CLERGY")
   },
 
-  routeToSeries: function(){
+  routeToSeries: function(clergy, series, campus){
+	  console.log(clergy, series, campus)
     ACTIONS.setView("SERIES")
   },
 

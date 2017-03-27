@@ -2,10 +2,21 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import Backbone from 'backbone'
 import {STORE} from './store.js'
-
+import { SermonCollection } from './models/model-sermon.js'
 export const ACTIONS = {
   setView: function(viewName){
     STORE.setStore('currentView', viewName)
+},
+
+  fetchAllSermons: function(){
+   console.log('fetching collections')
+   let newSermonColl = new SermonCollection()
+   newSermonColl.fetch().then(function(serverRes){
+      STORE.setStore('allSermons', serverRes)
+
+   })
+
+
   },
 
   //  saveNewSermon: function(userFormEntry){
