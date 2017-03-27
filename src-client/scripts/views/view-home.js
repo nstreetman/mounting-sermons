@@ -18,7 +18,7 @@ export const HomeView = React.createClass({
          <div className="container-player" key={i}>
             <div className="info-block">
                <p>Date: {sermObj.date}</p>
-               <p>pastor: {sermObj.pastor}</p>
+               <p>Pastor: {sermObj.pastor}</p>
                <p>Campus: {sermObj.campus}</p>
                <p>Series Name: {sermObj.series}</p>
             </div>
@@ -28,9 +28,6 @@ export const HomeView = React.createClass({
          </div>
          )
       })
-      // return (
-      //    <YouTubeAudio/>
-      // )
    },
 
    _updateType: function(value){
