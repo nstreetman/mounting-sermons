@@ -16,10 +16,17 @@ export const HomeView = React.createClass({
       console.log(data);
       return data.map(function(sermObj){
          return(
-         <div>
-         all sermon info inside containing div
+         <div className="container-player">
+            <div>
+               <p>Date: {sermObj.date}</p>
+               <p>pastor: {sermObj.pastor}</p>
+               <p>Campus: {sermObj.campus}</p>
+               <p>Series Name: {sermObj.series}</p>
+            </div>
+            <div>
+               <YouTubeAudio/>
+            </div>
          </div>
-
          )
       })
       // return (
@@ -59,11 +66,10 @@ export const HomeView = React.createClass({
       })
       return(
          <div className="M-bg-fail">
+            <h1>Holy Cross Sermons</h1>
             <SideBarAnon updateValue={this._updateSearchValue}
                          updateSearch={this._updateType}
                          searchType={this.state.searchType}/>
-            <h1> Default view: </h1>
-            <h2>See unfiltered sermons from recent weeks here</h2>
             <div>
             {this._showSermons(filteredSermons)}
             </div>
