@@ -18,7 +18,7 @@ _handleLoginSubmit: ()=>{
 render: function(){
     return (
 
-<form className="form-field">
+<form className="form-field" onSubmit={this._handleLoginSubmit}>
    <div>
    <label>Email:</label>
       <input type="email"></input>

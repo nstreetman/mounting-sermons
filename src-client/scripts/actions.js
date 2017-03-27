@@ -31,11 +31,6 @@ export const ACTIONS = {
       // })
   //  },
 
-   fetchAllSermons: function(){
-      let sermonCollInstance = new SermonCollection()
-      return SermonCollInstance.fetch()
-   },
-
   //  uploadToFileStack: function(){
   //      var client = filestack.init('AoR65q9vnRxqb5UWVJEGBz', { policy: 'policy', signature: 'signature' });
   //      client.upload(theFile);

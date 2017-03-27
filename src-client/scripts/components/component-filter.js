@@ -11,7 +11,7 @@ let dropDownStyle ={
 let dropStyle= {
 	padding: '15px',
 	background: '#fff',
-	border: '1px solid #eae',
+	border: '1px solid #eee',
    color: 'black',
    textAlign: 'center',
    fontSize: '20px'

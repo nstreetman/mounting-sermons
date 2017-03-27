@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "set-project-name": "node ./src-server/cli/setProjectName.js",
     "build-dist": "webpack",
-    "gen-seed-data" : "NODE_ENV=development node ./src-server/db/seed.js"
+    "gen-seed-data": "NODE_ENV=development node ./src-server/db/seed.js"
   },
   "author": "",
   "license": "ISC",
@@ -36,7 +36,8 @@
     "passport-local": "^1.0.0",
     "react": "15.1.0",
     "react-dom": "15.1.0",
-    "react-youtube-audio": "^0.2.10"
+    "react-youtube-audio": "^0.2.10",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "babel-cli": "6.23.0",
