@@ -3,7 +3,6 @@ import {ACTIONS} from '../actions.js'
 import {SideBarAnon} from '../components/component-filter.js'
 import YouTubeAudio from 'react-youtube-audio'
 
-
 export const HomeView = React.createClass({
    getInitialState: function(){
       return {
@@ -14,16 +13,16 @@ export const HomeView = React.createClass({
 
    _showSermons: function(data){
       console.log(data);
-      return data.map(function(sermObj){
+      return data.map(function(sermObj,i){
          return(
-         <div className="container-player">
-            <div>
+         <div className="container-player" key={i}>
+            <div className="info-block">
                <p>Date: {sermObj.date}</p>
                <p>pastor: {sermObj.pastor}</p>
                <p>Campus: {sermObj.campus}</p>
                <p>Series Name: {sermObj.series}</p>
             </div>
-            <div>
+            <div className="player-block">
                <YouTubeAudio videoId={sermObj.ytVideoId}/>
             </div>
          </div>
