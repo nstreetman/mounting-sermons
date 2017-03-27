@@ -15,7 +15,7 @@ export const AudioComponent = React.createClass({
       let selectedCampus = evt.target.dataset.route
 
    },
-   
+
    render: function(){
       return (
          <div classname="YouTube">

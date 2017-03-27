@@ -1,1 +1,1 @@
-module.exports = 'proper-auth'
+module.exports = 'mounting-sermons'

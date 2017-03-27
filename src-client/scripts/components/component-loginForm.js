@@ -18,7 +18,7 @@ _handleLoginSubmit: ()=>{
 render: function(){
     return (
 
-<form className="M-form-group M-grid">
+<form className="form-field">
    <div>
    <label>Email:</label>
       <input type="email"></input>

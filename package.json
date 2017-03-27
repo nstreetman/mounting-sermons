@@ -10,7 +10,8 @@
     "webpack-watcher": "webpack --progress --watch --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "set-project-name": "node ./src-server/cli/setProjectName.js",
-    "build-dist": "webpack"
+    "build-dist": "webpack",
+    "gen-seed-data" : "NODE_ENV=development node ./src-server/db/seed.js"
   },
   "author": "",
   "license": "ISC",
