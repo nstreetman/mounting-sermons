@@ -12,7 +12,7 @@ export const HeaderComponent = React.createClass({
             <div className="row top-menu"><img src="../images/HClogo.png"/></div>
             <div className="row top-menu">CONTACT</div>
             <div className="row top-menu">EVENTS</div>
-            <div className="row top-menu">HOW DO I...</div>
+            <div className="row top-menu"><a href="http://www.holycross.net/howdoi/">HOW DO I...</a></div>
          </div>
       )
    }
