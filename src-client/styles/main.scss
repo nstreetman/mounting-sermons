@@ -11,6 +11,11 @@ img {
 	display: block;
 }
 
+a, a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
 h1{
 	font-family: 'Josefin Sans', sans-serif;
 	text-align: left;
@@ -38,6 +43,15 @@ h3 {
 	width: 100%;
 	background-color: rgba(169,169,169,1);
 	height: 200px;
+}
+
+.header a {
+	color: rgba(255,255,255,1);
+}
+
+.header a:hover {
+	color: rgba(177,237,235,1);
+	transition: color 0.1s;
 }
 
 .top-menu{
@@ -85,7 +99,7 @@ h3 {
 // Footer Formatting
 .footer_container{
 	background-color: rgba(33,33,33,1);
-	color: #fff;
+	color: rgba(255,255,255,1);
 	height: 250px;
 	padding-top: 50px;
 	margin-top: 100px;
@@ -97,9 +111,20 @@ h3 {
 }
 
 .footer_container .btn-default {
-	border: 2px solid #fff;
+	border: 2px solid rgba(255,255,255,1);
 	background-color: rgba(33,33,33,1);
-	color: #fff;
+	color: rgba(255,255,255,1);
+}
+
+// .footer_container .btn-default a {
+// 	color: rgba(255,255,255,1);
+// }
+
+.footer_container .btn-default:hover {
+	border: 2px solid rgba(255,255,255,1);
+	background-color: rgba(220,220,220,1);
+	color: rgba(33,33,33,1);
+	transition: background-color 0.1s, color 0.1s;
 }
 
 .socialbtn {
