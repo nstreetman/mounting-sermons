@@ -26,58 +26,60 @@ export const SideBarAnon = React.createClass({
    },
    _handleSelectedSearch: function(evt){
       evt.preventDefault()
+      console.log(evt.target.value)
       this.props.updateValue(evt.target.value)
    },
-   _renderSecondDropDown: function(){
+
+   _renderSecondDropDown: function(valuesToRender){
+
       if(this.props.searchType === 'All'){
          return
-      }if(this.props.searchType === 'campus'){
-         return(
-            <div className='form-field'>
-               <label>Campus</label>
-               <select name="CAMPUS" onChange={this._handleSelectedSearch}>
-                  <option data-route="CAMPUS">Sullivan Island</option>
-                  <option data-route="CAMPUS">Daniel Island</option>
-                  <option data-route="CAMPUS">IOn</option>
-               </select>
-            </div>
-         )
-      }if(this.props.searchType === "pastor"){
-         return(
-            <div className='form-field'>
-               <label>Clergy</label>
-               <select name="PASTOR" onChange={this._handleSelectedSearch}>
-                  <option data-route="PASTOR">Rev. Chris Warner</option>
-                  <option data-route="PASTOR">The Rev. Jonathan Bennett</option>
-                  <option data-route="PASTOR">The Rev. Sean Norris</option>
-               </select>
-            </div>
-         )
-      }if(this.props.searchType === "series"){
-         return(
-            <div className='form-field'>
-               <label>Series</label>
-               <select name="SERIES" onChange={this._handleFilterClick} data-route="SERIES">Crazy Busy</select>
-            </div>
-         )
       }
+      let searchOptions  = [];
+      let numOfSermons = valuesToRender.length;
+      for (var i = 0; i < numOfSermons; i++) {
+          if(searchOptions.indexOf(valuesToRender[i][this.props.searchType]) == -1){
+              searchOptions.push(valuesToRender[i][this.props.searchType]);
+          }
+      }
+      function capitalizeFirstLetter(string) {
+         return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+      console.log(searchOptions)
+
+      return(
+         <div className='form-field'>
+            <label>{capitalizeFirstLetter(this.props.searchType)}</label>
+            <select onChange={this._handleSelectedSearch}>
+            <option value="" key={0}>Select a {this.props.searchType}</option>
+
+               {searchOptions.map((strVals, i)=>{
+                  console.log(strVals, 'inside da looop')
+                  return(
+                     <option key={i +1}>{strVals}</option>
+                  )
+               })}
+            </select>
+         </div>
+      )
+
    },
 
    render: function(){
-      console.log(this.props.searchType)
+
       return (
          <div>
          <div className='form-field'>
             <label>Search By:</label>
             <select name="searchType" onChange={this._handleFilterClick}>
                <option data-route="All">All</option>
-               <option data-route="PASTOR">pastor</option>
-               <option data-route="CAMPUS">campus</option>
-               <option data-route="SERIES">series</option>
+               <option value="pastor" data-route="PASTOR">Pastor</option>
+               <option value="campus" data-route="CAMPUS">Campus</option>
+               <option value="series" data-route="SERIES">Series</option>
 
             </select>
          </div>
-            {this._renderSecondDropDown()}
+            {this._renderSecondDropDown(this.props.sermons)}
          </div>
    )
    }

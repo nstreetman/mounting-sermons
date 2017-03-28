@@ -12,6 +12,7 @@ export const HomeView = React.createClass({
    },
 
    _showSermons: function(data){
+
       console.log(data);
       return data.map(function(sermObj,i){
          return(
@@ -52,20 +53,29 @@ export const HomeView = React.createClass({
 
       console.log('whoa', this.state)
       let component = this
+
       let filteredSermons = this.props.allSermons.filter(function(obj){
+
+         console.log(obj[component.state.searchType], 'filter type')
          if(component.state.searchType === "All" || component.state.searchValue === ""){
+            console.log('returninng all ')
             return true
          }
          if(obj[component.state.searchType] === component.state.searchValue){
+            console.log('returninng filtered ')
+
             return true
          }
       })
       return(
          <div className="M-bg-fail">
             <h1>Holy Cross Sermons</h1>
-            <SideBarAnon updateValue={this._updateSearchValue}
-                         updateSearch={this._updateType}
-                         searchType={this.state.searchType}/>
+            <SideBarAnon
+               updateValue={this._updateSearchValue}
+               updateSearch={this._updateType}
+               searchType={this.state.searchType}
+               sermons={this.props.allSermons}
+            />
             <div>
             {this._showSermons(filteredSermons)}
             </div>
