@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
-import {UserModel} from '../models/model-user.js'
+import {AdminModel} from '../models/model-admin.js'
 import {ACTIONS} from '../actions.js'
 
 export const LoginFormComponent = React.createClass({

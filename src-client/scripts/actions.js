@@ -3,7 +3,7 @@ import React from 'react'
 import Backbone from 'backbone'
 import {STORE} from './store.js'
 import { SermonCollection } from './models/model-sermon.js'
-import { AdminModel } from './models/model-sermon.js'
+import { AdminModel } from './models/model-admin.js'
 export const ACTIONS = {
   setView: function(viewName){
     STORE.setStore('currentView', viewName)
