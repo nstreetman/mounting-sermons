@@ -18,12 +18,12 @@ export const HomeView = React.createClass({
          <div className="container-player" key={i}>
             <div className="info-block">
                <p>Date: {sermObj.date}</p>
-               <p>Pastor: {sermObj.pastor}</p>
                <p>Campus: {sermObj.campus}</p>
+               <p>Pastor: {sermObj.pastor}</p>
                <p>Series Name: {sermObj.series}</p>
             </div>
             <div className="player-block">
-               <YouTubeAudio videoId={sermObj.ytVideoId}/>
+               <YouTubeAudio videoId={sermObj.ytVideoId} />
             </div>
          </div>
          )

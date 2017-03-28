@@ -56,12 +56,6 @@ h3 {
 	margin-top: -50px;
 }
 
-.view {
-	background-color: yellow;
-	text-align: center;
-	height: 70%;
-}
-
 .row {
 	height: 100%;
 }
@@ -69,22 +63,33 @@ h3 {
 .container-fluid {
 	display: inline-block;
 }
-
-.sermon_scroll-list{
-	background-color: blue;
-	// height: 100%;
+//Sermon Pane(Home View)//
+.container-player {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
-.sermon_filter-ops{
-	background-color: red;
+.info-block {
+	display: inline-block;
+	width: 50%;
+	line-height: 1.1;
 }
-
+.player-block {
+	display: inline-block;
+	width: 50%;
+	font-family: 'Playfair Display', serif;
+}
+// Footer Formatting
 .footer_container{
 	background-color: rgba(33,33,33,1);
 	color: #fff;
-	height: 200px;
+	height: 250px;
 	padding-top: 50px;
 	margin-top: 100px;
+	padding-top: 50px;
 	width: 100%;
 	text-align: center;
 	letter-spacing: 1px;
@@ -103,10 +108,13 @@ h3 {
 
 .directions {
 	padding: 10px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
 }
 
 .designer_tag {
 	padding: 10px;
+	font-weight: lighter;
 }
 
 // mobile-phone

@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "set-project-name": "node ./src-server/cli/setProjectName.js",
     "build-dist": "webpack",
-    "gen-seed-data" : "NODE_ENV=development node ./src-server/db/seed.js"
+    "gen-seed-data": "NODE_ENV=development node ./src-server/db/seed.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,7 +29,7 @@
     "install": "^0.8.7",
     "jquery": "2.2.4",
     "margo-css": "^3.2.1",
-    "moment": "^2.18.0",
+    "moment": "^2.18.1",
     "mongoose": "4.8.3",
     "npm-run-all": "4.0.1",
     "passport": "0.3.2",

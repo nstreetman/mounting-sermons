@@ -3,6 +3,7 @@ import React from 'react'
 import Backbone from 'backbone'
 import {STORE} from './store.js'
 import { SermonCollection } from './models/model-sermon.js'
+import { AdminModel } from './models/model-sermon.js'
 export const ACTIONS = {
   setView: function(viewName){
     STORE.setStore('currentView', viewName)
@@ -15,9 +16,15 @@ export const ACTIONS = {
       STORE.setStore('allSermons', serverRes)
 
    })
+},
 
+loginUser: function(user,pw){
+  AdminModel.logIn(user, pw).then(function(serverRes){
+    STORE.setStore('currentUser', serverRes )
+    ACTIONS.changeCurrentNav('LOGIN', 'login')
+  })
+},
 
-  },
 
   //  saveNewSermon: function(userFormEntry){
   //    ACTIONS.uploadToFileStack(userFormEntry.fileUpload)
