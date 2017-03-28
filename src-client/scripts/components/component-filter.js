@@ -77,7 +77,6 @@ export const SideBarAnon = React.createClass({
 
             </select>
          </div>
-
             {this._renderSecondDropDown()}
          </div>
    )
