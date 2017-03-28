@@ -96,23 +96,27 @@ h3 {
 
 .container-player {
 	width: 75%;
+	background-color: rgba(169,169,169,.3);
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border: 3px rgba(46,51,108,1) solid;
 	border-style: double;
-	// border-radius: 2.5%;
-
+	border-radius: 3%;
 }
 
 .info-block {
+	padding-left: 25px;
 	display: inline-block;
 	font-size: 2rem;
 	width: 50%;
 	line-height: 1.25;
 }
 .player-block {
+	padding-left: 75px;
 	display: inline-block;
 	width: 50%;
 	font-family: 'Playfair Display', serif;
