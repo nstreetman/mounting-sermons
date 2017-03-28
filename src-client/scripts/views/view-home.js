@@ -1,7 +1,7 @@
 import React from 'react'
 import {ACTIONS} from '../actions.js'
 import {SideBarAnon} from '../components/component-filter.js'
-import YouTubeAudio from 'react-youtube-audio'
+import YouTubeAudio from '../components/yt-player/player.js'
 
 export const HomeView = React.createClass({
    getInitialState: function(){
