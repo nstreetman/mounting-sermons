@@ -18,7 +18,9 @@ a, a:hover {
 
 h1{
 	font-family: 'Josefin Sans', sans-serif;
-	text-align: left;
+	font-size: 4em;
+	text-align: center;
+	color: rgba(46,51,108,1);
 }
 
 h2 {
@@ -78,18 +80,37 @@ h3 {
 	display: inline-block;
 }
 //Sermon Pane(Home View)//
+
+.form-field {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	font-size: 2rem;
+	text-align: center;
+	vertical-align: middle;
+	width: 25%;
+	// border: 4px rgba(46,51,108,1) solid;
+	// border-radius: 2.5%;
+	padding: 5px;
+}
+
 .container-player {
 	width: 75%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border: 3px rgba(46,51,108,1) solid;
+	border-style: double;
+	// border-radius: 2.5%;
+
 }
 
 .info-block {
 	display: inline-block;
+	font-size: 2rem;
 	width: 50%;
-	line-height: 1.1;
+	line-height: 1.25;
 }
 .player-block {
 	display: inline-block;
@@ -116,9 +137,6 @@ h3 {
 	color: rgba(255,255,255,1);
 }
 
-// .footer_container .btn-default a {
-// 	color: rgba(255,255,255,1);
-// }
 
 .footer_container .btn-default:hover {
 	border: 2px solid rgba(255,255,255,1);
