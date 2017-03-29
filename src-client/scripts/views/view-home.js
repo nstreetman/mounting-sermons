@@ -2,6 +2,7 @@ import React from 'react'
 import {ACTIONS} from '../actions.js'
 import {SideBarAnon} from '../components/component-filter.js'
 import YouTubeAudio from '../components/yt-player/player.js'
+import moment from 'moment'
 
 export const HomeView = React.createClass({
    getInitialState: function(){
@@ -18,7 +19,7 @@ export const HomeView = React.createClass({
          return(
          <div className="container-player" key={i}>
             <div className="info-block">
-               <p>Date: {sermObj.date}</p>
+               <p>Date: {moment(sermObj.date).format('dddd MMMM D, YYYY')}</p>
                <p>Campus: {sermObj.campus}</p>
                <p>Pastor: {sermObj.pastor}</p>
                <p>Series Name: {sermObj.series}</p>
