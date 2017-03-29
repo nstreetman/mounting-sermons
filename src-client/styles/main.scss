@@ -8,6 +8,7 @@ body{
 
 img {
 	width: 100%;
+	height: 100%;
 	display: block;
 }
 
@@ -43,6 +44,7 @@ h3 {
 	width: 100%;
 	background-color: rgba(169,169,169,1);
 	height: 200px;
+	text-align: center;
 }
 
 .header a {
@@ -74,6 +76,10 @@ h3 {
 	height: 100%;
 }
 
+.mobile_bars {
+	display: none;
+}
+
 .container-fluid {
 	display: inline-block;
 }
@@ -96,6 +102,7 @@ h3 {
 	width: 50%;
 	font-family: 'Playfair Display', serif;
 }
+
 // Footer Formatting
 .footer_container{
 	background-color: rgba(33,33,33,1);
@@ -115,10 +122,6 @@ h3 {
 	background-color: rgba(33,33,33,1);
 	color: rgba(255,255,255,1);
 }
-
-// .footer_container .btn-default a {
-// 	color: rgba(255,255,255,1);
-// }
 
 .footer_container .btn-default:hover {
 	border: 2px solid rgba(255,255,255,1);
@@ -145,9 +148,15 @@ h3 {
 // mobile-phone
 @media screen and (max-width: 768px){
 
-}
-
-// mobile-tablet
-@media screen and (max-width:1000px) and (min-width:768px){
+	.navlink {
+		display: none;
+	}
+	.mobile_bars {
+		display: inline-block;
+		color: rgba(220,220,220,1);
+		position: relative;
+		left: 20px;
+		top: 20px;
+	}
 
 }
