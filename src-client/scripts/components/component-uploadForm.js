@@ -16,9 +16,11 @@ export const UploadFormComponent = React.createClass({
     let theFile = fileInputEl.files[0]
     let client = filestack.init('AoR65q9vnRxqb5UWVJEGBz')
     console.log('uploading file...')
+    window.alert('File Uploading....please wait')
     client.upload(theFile).then(function(fileStackRes){
-      console.log(fileStackRes)
-
+    console.log(fileStackRes)
+    window.alert('Sermon Submitted!')
+    // this.setState()
       // _handleSermonSubmit: function(evt){
       //   evt.preventDefault();
         // let formEl = evt.target
