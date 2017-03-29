@@ -97,7 +97,7 @@ h3 {
 	line-height: 1.5;
 }
 
-.mobile_bars {
+.mo_bars {
 	display: none;
 }
 
@@ -130,6 +130,7 @@ h3 {
 	margin-right: auto;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-right: 20px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border: 3px rgba(46,51,108,1) solid;
@@ -213,17 +214,20 @@ h3 {
 // Mobile-View
 @media screen and (max-width: 768px){
 
-	.navlink {
+	.footer_container {
 		display: none;
 	}
 
-	.mo_bars {
-		color: rgba(220,220,220,1);
-		display: inline-block;
+	.navlink {
+		display: none;
 	}
-
+	.mo_bars {
+		color: rgba(232,232,232,1);
+		display: inline;
+		padding: 10px;
+	}
 	.logo {
-		justify-content: center;
+		margin-left: 20%;
 	}
 	.descriptext {
 		display: none;
