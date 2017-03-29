@@ -34,7 +34,7 @@ export const FooterComponent = React.createClass({
                </div>
              </div>
            </div>
-           <p className='directions'>CHURCH OF THE HOLY CROSS, 2520 MIDDLE STREET, SULLIVAN&#39;S ISLAND, SC 29482 843-883-3586 info@HolyCross.net</p>
+           <p className='directions'>CHURCH OF THE HOLY CROSS, 2520 MIDDLE STREET, SULLIVAN&#39;S ISLAND, SC 29482 843-883-3586 INFO@HOLYCROSS.NET</p>
            <p className='designer_tag'>Designed by eCothran, bCallahan &#38; nStreetman &#169; 2017 | Powered by Coffee</p>
            </div>
 

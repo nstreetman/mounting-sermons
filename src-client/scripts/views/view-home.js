@@ -68,8 +68,11 @@ export const HomeView = React.createClass({
          }
       })
       return(
-         <div className="M-bg-fail">
-            <h1>Holy Cross Sermons</h1>
+         <div className="sermon-view">
+            <div className="heading-sermons">
+            <h1>Sunday Sermons</h1>
+            <h4>EACH SUNDAY'S SERMONS ARE UPLOADED HERE ON MONDAYS. WE REGULARLY FEATURE SERMON SERIES, AND MANY OF THESE SERMONS ARE PART OF A SERIES. USE THE DROP DOWN LIST BELOW TO SEARCH RECORDINGS BY PASTOR, CAMPUS OR SERIES.</h4>
+            </div>
             <SideBarAnon
                updateValue={this._updateSearchValue}
                updateSearch={this._updateType}
