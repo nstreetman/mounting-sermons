@@ -36,7 +36,7 @@ export const UploadFormComponent = React.createClass({
           series: formEl.series.value,
           campus: formEl.campus.value,
           date: formEl.date.value,
-          ytVideoId: 'a_tbxGZuukQ',
+          ytVideoId: 'kVmJUtORsuM',
           filestackUrl: fileStackRes.url
       })
     sermonModel.save().then(function(serverRes){
