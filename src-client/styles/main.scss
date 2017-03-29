@@ -209,18 +209,23 @@ h3 {
 .form-file-input {
 	margin-left: 40%;
 }
-// mobile-phone
+
+// Mobile-View
 @media screen and (max-width: 768px){
 
 	.navlink {
 		display: none;
 	}
-	.mobile_bars {
-		display: inline-block;
+
+	.mo_bars {
 		color: rgba(220,220,220,1);
-		position: relative;
-		left: 20px;
-		top: 20px;
+		display: inline-block;
 	}
 
+	.logo {
+		text-align: center;
+	}
+	.descriptext {
+		display: none;
+	}
 }

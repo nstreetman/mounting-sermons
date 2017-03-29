@@ -73,7 +73,7 @@ export const HomeView = React.createClass({
          <div className="sermon-view">
             <div className="heading-sermons">
             <h1>Sunday Sermons</h1>
-            <h4>EACH SUNDAY'S SERMONS ARE UPLOADED HERE ON MONDAYS. WE REGULARLY FEATURE SERMON SERIES, AND MANY OF THESE SERMONS ARE PART OF A SERIES. USE THE DROP DOWN LIST BELOW TO SEARCH RECORDINGS BY PASTOR, CAMPUS OR SERIES.</h4>
+            <h4 className="descriptext">EACH SUNDAY&#39;S SERMONS ARE UPLOADED HERE ON MONDAYS. WE REGULARLY FEATURE SERMON SERIES, AND MANY OF THESE SERMONS ARE PART OF A SERIES. USE THE DROP DOWN LIST BELOW TO SEARCH RECORDINGS BY PASTOR, CAMPUS OR SERIES.</h4>
             </div>
             <SideBarAnon
                updateValue={this._updateSearchValue}
