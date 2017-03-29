@@ -31,7 +31,7 @@ export const UploadFormComponent = React.createClass({
       sermonModel.set({
       // let formData = {
           pastor: 'The Rev. Chris Warner',
-          series: 'CrazyBusy',
+          series: 'Crazy Busy',
           campus: 'Daniel Island',
           date: '12/12/10',
           ytVideoId: 'a_tbxGZuukQ',
@@ -46,31 +46,34 @@ export const UploadFormComponent = React.createClass({
 
   render: function(){
     return (
-
       <form name="uploadform" onSubmit={this._handleUploads} method='post'>
-      <div className="form-field">
+      <div className="container-upload-form">
+      <h1>Sermon Upload Form</h1>
+
+      <div className="form-field form-uploads">
           <label>Clergy</label>
           <select>
-            <option value="Warner">The Rev. Chris Warner</option>
-            <option value="Norris">The Rev. Sean Norris</option>
-            <option value="Spencer">The Rev. Trevor Spencer</option>
-            <option value="Bennett">The Rev. Jonathan Bennett</option>
+            <option value="The Rev. Chris Warner">The Rev. Chris Warner</option>
+            <option value="The Rev. Sean Norris">The Rev. Sean Norris</option>
+            <option value="The Rev. Trevor Spencer">The Rev. Trevor Spencer</option>
+            <option value="The Rev. Jonathan Bennett">The Rev. Jonathan Bennett</option>
             <option value="AddNew">Add New...</option>
         </select>
       </div>
 
-         <div className="form-field">
+         <div className="form-field form-uploads">
              <label>Sermon Series</label>
              <select>
-               <option value="GenHearts">Generous Hearts</option>
-               <option value="LifeTogether">Life Together</option>
-               <option value="Formed">Formed</option>
-               <option value="CrazyBusy">Crazy Busy</option>
-               <option value="AddNew">Add New...</option>
+               <option value="Generous Hearts">Generous Hearts</option>
+               <option value="Life Together">Life Together</option>
+               <option value="Formed In Christ">Formed In Christ</option>
+               <option value="Crazy Busy">Crazy Busy</option>
+               <option value="None">None</option>
+               <option value="Add New">Add New...</option>
            </select>
          </div>
 
-         <div className="form-field">
+         <div className="form-field form-uploads">
              <label>Campus</label>
              <select>
                <option value="SI">Sullivan&#8217;s Island</option>
@@ -79,18 +82,18 @@ export const UploadFormComponent = React.createClass({
            </select>
          </div>
 
-         <div>
+         <div className="form-field form-uploads">
             <label>Date of Sermon</label>
             <input type='date'></input>
          </div>
 
-         <div>
+         <div className="form-field form-uploads form-file-input">
             <input type="file" name="fileInput"/>
          </div>
 
-         <div>
+         <div className="form-field form-uploads">
             <input type="submit" value="Submit"/>
-
+         </div>
          </div>
       </form>
     )

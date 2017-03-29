@@ -181,6 +181,20 @@ h3 {
 	font-weight: lighter;
 }
 
+//Forms//
+.container-upload-form {
+	margin-top: 25px;
+	border: 2px solid rgba(46,51,108,.7);
+}
+.form-uploads {
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 15px;
+	width: 50%;
+}
+.form-file-input {
+	margin-left: 40%;
+}
 // mobile-phone
 @media screen and (max-width: 768px){
 
