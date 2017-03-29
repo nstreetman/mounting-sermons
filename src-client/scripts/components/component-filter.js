@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom'
 import {ACTIONS} from '../actions.js'
 
 let dropDownStyle ={
-  position: 'fixed',
-	right:'0px', top: '200px',
-	height: '250px',
-	width: '200px'
+    position: 'fixed',
+  	right:'0px', top: '200px',
+    padding: '10px',
+  	height: '250px',
+  	width: '200px'
 }
 let dropStyle= {
-	padding: '15px',
-	background: '#fff',
-	border: '1px solid #eee',
-   color: 'black',
-   textAlign: 'center',
-   fontSize: '20px'
+  	padding: '15px',
+  	background: '#fff',
+  	border: '1px solid #eee',
+    color: 'black',
+    textAlign: 'center',
+    fontSize: '20px'
 }
 
 export const SideBarAnon = React.createClass({
@@ -72,10 +73,10 @@ export const SideBarAnon = React.createClass({
          <div className='form-field'>
             <label>Search By:</label>
             <select name="searchType" onChange={this._handleFilterClick}>
-               <option data-route="All">All</option>
-               <option value="pastor" data-route="PASTOR">Pastor</option>
-               <option value="campus" data-route="CAMPUS">Campus</option>
-               <option value="series" data-route="SERIES">Series</option>
+               <option  data-route="All">All</option>
+               <option  value="pastor" data-route="PASTOR">Pastor</option>
+               <option  value="campus" data-route="CAMPUS">Campus</option>
+               <option  value="series" data-route="SERIES">Series</option>
 
             </select>
          </div>

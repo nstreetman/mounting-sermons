@@ -21,7 +21,7 @@ export const ACTIONS = {
 loginUser: function(user,pw){
   AdminModel.logIn(user, pw).then(function(serverRes){
     STORE.setStore('currentUser', serverRes )
-    ACTIONS.changeCurrentNav('LOGIN', 'login')
+    ACTIONS.changeCurrentNav('UPLOAD', 'upload')
   })
 },
 

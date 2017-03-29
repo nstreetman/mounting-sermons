@@ -2,6 +2,7 @@ import React from 'react'
 import {ACTIONS} from '../actions.js'
 import {SideBarAnon} from '../components/component-filter.js'
 import YouTubeAudio from '../components/yt-player/player.js'
+import moment from 'moment'
 
 export const HomeView = React.createClass({
    getInitialState: function(){
@@ -18,7 +19,7 @@ export const HomeView = React.createClass({
          return(
          <div className="container-player" key={i}>
             <div className="info-block">
-               <p>Date: {sermObj.date}</p>
+               <p>Date: {moment(sermObj.date).format('dddd MMMM D, YYYY')}</p>
                <p>Campus: {sermObj.campus}</p>
                <p>Pastor: {sermObj.pastor}</p>
                <p>Series Name: {sermObj.series}</p>
@@ -68,8 +69,11 @@ export const HomeView = React.createClass({
          }
       })
       return(
-         <div className="M-bg-fail">
-            <h1>Holy Cross Sermons</h1>
+         <div className="sermon-view">
+            <div className="heading-sermons">
+            <h1>Sunday Sermons</h1>
+            <h4>EACH SUNDAY'S SERMONS ARE UPLOADED HERE ON MONDAYS. WE REGULARLY FEATURE SERMON SERIES, AND MANY OF THESE SERMONS ARE PART OF A SERIES. USE THE DROP DOWN LIST BELOW TO SEARCH RECORDINGS BY PASTOR, CAMPUS OR SERIES.</h4>
+            </div>
             <SideBarAnon
                updateValue={this._updateSearchValue}
                updateSearch={this._updateType}
