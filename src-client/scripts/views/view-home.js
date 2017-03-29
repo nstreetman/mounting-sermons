@@ -23,6 +23,7 @@ export const HomeView = React.createClass({
                <p>Campus: {sermObj.campus}</p>
                <p>Pastor: {sermObj.pastor}</p>
                <p>Series Name: {sermObj.series}</p>
+               <p><span className="download"><a href="{sermonObj.filestackUrl}"><em>Download this Sermon</em></a></span></p>
             </div>
             <div className="player-block">
                <YouTubeAudio videoId={sermObj.ytVideoId} />
