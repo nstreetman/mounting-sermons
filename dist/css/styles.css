@@ -2,19 +2,23 @@
   box-sizing: border-box; }
 
 body {
-  font-family: Helvetica;
-  font-size: 0; }
+  font-family: 'Playfair Display', serif; }
 
 img {
   width: 100%;
   display: block; }
 
 h1 {
-  text-align: center; }
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left; }
 
-footer {
-  background-color: #333;
-  height: 15%; }
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left; }
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left; }
 
 #app-container {
   margin: 0;
@@ -24,8 +28,23 @@ footer {
   height: 100vh; }
 
 .header {
-  background-color: green;
-  height: 15%; }
+  width: 100%;
+  background-color: darkgray;
+  height: 200px; }
+
+.top-menu {
+  color: white;
+  display: inline-block;
+  padding-top: 75px;
+  padding-left: 110px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle; }
+
+.top-menu img {
+  width: 250px;
+  margin-top: -50px; }
 
 .view {
   background-color: yellow;
@@ -35,22 +54,38 @@ footer {
 .row {
   height: 100%; }
 
+.container-fluid {
+  display: inline-block; }
+
 .sermon_scroll-list {
-  background-color: blue;
-  height: 100%; }
+  background-color: blue; }
 
 .sermon_filter-ops {
   background-color: red; }
 
 .footer_container {
-  text-align: center; }
+  background-color: #212121;
+  color: #fff;
+  height: 200px;
+  padding-top: 50px;
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 12px; }
 
 .footer_container .btn-default {
   border: 2px solid #fff;
-  background-color: #333;
+  background-color: #212121;
   color: #fff; }
 
 .socialbtn {
-  border-radius: % 50; }
+  border-radius: 100%; }
+
+.directions {
+  padding: 10px; }
+
+.designer_tag {
+  padding: 10px; }
 
 /*# sourceMappingURL=styles.css.map*/

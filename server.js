@@ -3,14 +3,14 @@
 global.chalk = require('chalk')
 global.PROJECT_NAME = require('./src-server/config/projectName.js')
 
-if(typeof PROJECT_NAME !== 'string' ){
+if(typeof PROJECT_NAME !== 'string' ){ 
 	require('./src-server/cli/setProjectName.js')
-	throw new Error(`\n${chalk.bgRed.bold('There must be a project name exported from :')} ${chalk.grey.bold('./src-server/config/projectName.js')} \n ${chalk.bgWhite.black(' you must execute: ')} ${chalk.cyan.bold('npm run set-project-name')}` )
+	throw new Error(`\n${chalk.bgRed.bold('There must be a project name exported from :')} ${chalk.grey.bold('./src-server/config/projectName.js')} \n ${chalk.bgWhite.black(' you must execute: ')} ${chalk.cyan.bold('npm run set-project-name')}` ) 
 }
 
 const	bodyParser = require('body-parser')
 const express = require('express') //import express web server
-const renderFile = require('ejs').renderFile //import view templating engine
+const renderFile = require('ejs').renderFile //import view templating engine 
 
 const passport = require('passport')
 const session = require('express-session')
@@ -23,6 +23,7 @@ const connectToDB = require('./src-server/db/db-connect.js') //connect to db
 const indexRouter = require('./src-server/routes/indexRouter.js')
 const apiRouter = require('./src-server/routes/apiRouter.js')
 const authRouter = require('./src-server/routes/authRouter.js')
+const oAuthRouter = require('./src-server/routes/oAuthRouter.js')
 
 
 // =========
@@ -45,7 +46,6 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 configurePassport_Local()
-
 
 // set port if exists in environment for heroku or live site, else set to 3000 for dev
 const PORT = process.env.PORT || 3000
@@ -70,7 +70,7 @@ app.use( express.static( `${__dirname}/dist`) );
 app.use('/', indexRouter)
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
-
+app.use('/oauth', oAuthRouter)
 
 //---------------------
 //EXECUTION SCRIPTS

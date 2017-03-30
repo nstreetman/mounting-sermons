@@ -82,11 +82,22 @@ export const HomeView = React.createClass({
                sermons={this.props.allSermons}
             />
             <div>
-            {this._showSermons(filteredSermons)}
+               {this._showSermons(filteredSermons)}
             </div>
 
          </div>
       )
    }
 
+})
+
+let Player = React.createClass({
+	
+   render: function(){
+      return (
+         <div className="container-player">
+            <YouTubeAudio videoId={this.props.sermObj.ytVideoId}/>
+         </div>
+      )
+   }
 })
