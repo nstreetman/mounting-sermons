@@ -26,6 +26,7 @@
     "ejs": "2.4.2",
     "express": "4.14.0",
     "express-session": "^1.15.1",
+    "googleapis": "^18.0.0",
     "install": "^0.8.7",
     "jquery": "2.2.4",
     "margo-css": "^3.2.1",
