@@ -19,16 +19,17 @@ render: function(){
     return (
 
   <form className="form auth-form" onSubmit={this._handleLoginSubmit}>
-     <div>
+     <div className="auth-form-inputs">
+     <h1>Login</h1>
      <label>Admin Email:</label>
         <input name="email" type="email"></input>
      </div>
-     <div>
+     <div className="auth-form-inputs">
         <label>Password:</label>
         <input name="pw" type="password"></input>
      </div>
-     <div>
-        <input type="submit"></input>
+     <div auth-form-inputs>
+        <input type="submit" value="Submit"></input>
      </div>
   </form>
 )

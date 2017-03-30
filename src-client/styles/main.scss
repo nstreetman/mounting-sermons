@@ -185,8 +185,6 @@ h3 {
 	background-color: #aaa ;
 	border: 2px solid  #A9A9A9;
 	padding: 10px;
-
-
 }
 
 .socialbtn {
@@ -209,6 +207,7 @@ h3 {
 .container-upload-form {
 	margin-top: 25px;
 	border: 2px solid rgba(46,51,108,.7);
+	border-radius: 5px;
 }
 .form-uploads {
 	text-align: center;
@@ -225,10 +224,31 @@ h3 {
 	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 5%;
+	border-radius: 5px;
 	background-color: rgba(46,51,108, 1);
 	color: #fff;
+	text-decoration: none;
 }
+
+.auth-form {
+	margin-top: 25px;
+	border: 2px solid rgba(46,51,108,.7);
+	border-radius: 5px;
+	padding: 25px;
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+.auth-form-inputs{
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 15px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 // Mobile-View
 @media screen and (max-width: 768px){
 
