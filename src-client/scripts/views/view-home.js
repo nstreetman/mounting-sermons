@@ -12,6 +12,10 @@ export const HomeView = React.createClass({
       }
    },
 
+   componentWillMount: function(){
+     ACTIONS.fetchAllSermons()
+   },
+
    _showSermons: function(data){
 
       console.log(data);
@@ -92,7 +96,7 @@ export const HomeView = React.createClass({
 })
 
 let Player = React.createClass({
-	
+
    render: function(){
       return (
          <div className="container-player">

@@ -47,7 +47,7 @@ h3 {
   display: inline-flex;
 	width: 100%;
 	background-color: rgba(169,169,169,1);
-	height: 200px;
+	height: 215px;
 	vertical-align: middle;
 	margin-left: auto;
 	margin-right: auto;
@@ -57,7 +57,6 @@ h3 {
 	vertical-align: middle;
 	text-align: center;
 }
-
 
 .header a {
 	color: rgba(255,255,255,1);
@@ -156,10 +155,9 @@ h3 {
 .footer_container{
 	background-color: rgba(33,33,33,1);
 	color: rgba(255,255,255,1);
-	height: 250px;
-	padding-top: 50px;
+	padding-top: 40px;
 	margin-top: 100px;
-	padding-top: 50px;
+	padding-bottom: 30px;
 	width: 100%;
 	text-align: center;
 	letter-spacing: 1px;
@@ -178,6 +176,17 @@ h3 {
 	background-color: rgba(220,220,220,1);
 	color: rgba(33,33,33,1);
 	transition: background-color 0.1s, color 0.1s;
+}
+
+.footer_login {
+	text-decoration: none;
+	color: #333;
+	border-radius: 4px;
+	background-color: #aaa ;
+	border: 2px solid  #A9A9A9;
+	padding: 10px;
+
+
 }
 
 .socialbtn {
@@ -210,7 +219,16 @@ h3 {
 .form-file-input {
 	margin-left: 40%;
 }
-
+.you-tube-button {
+	margin-top: 25px;
+	text-align: center;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5%;
+	background-color: rgba(46,51,108, 1);
+	color: #fff;
+}
 // Mobile-View
 @media screen and (max-width: 768px){
 

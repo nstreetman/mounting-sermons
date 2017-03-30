@@ -25,7 +25,7 @@ var DRIVE_UPLOAD_URL = 'https://www.googleapis.com/upload/drive/v2/files/';
  */
 var RetryHandler = function() {
   this.interval = 1000; // Start at one second
-  this.maxInterval = 60 * 1000; // Don't wait longer than a minute 
+  this.maxInterval = 60 * 1000; // Don't wait longer than a minute
 };
 
 /**
@@ -287,8 +287,7 @@ MediaUploader.prototype.buildUrl_ = function(id, params, baseUrl) {
 
 function configureMediaUploader(userConfig, successCb, failCb){
 	console.log(userConfig)
-	
-	
+
 
 	let metadataObj = {
 		snippet: {
@@ -311,13 +310,14 @@ function configureMediaUploader(userConfig, successCb, failCb){
 		 params: {
 			part: Object.keys(metadataObj).join(',')
 		 },
+
 		 onProgress: function( data ){
 			console.log(data.loaded, ' / ', data.total )
-		 }, 
+		 },
 		 onComplete: successCb || function( data ){
 			console.log('VIDEO UPLOAD COMPLETE!')
 			console.log(data)
-		 }, 
+		 },
 		 onError: failCb || function(err){
 			console.log('VIDEO UPLOAD ERROR!')
 			console.log(err);

@@ -26,7 +26,6 @@ export const ViewController = React.createClass({
 			let newStoreState = STORE.getStoreData()
 			vcComponent.setState(newStoreState)
 		})
-		ACTIONS.fetchAllSermons()
 		let router = new AppRouter()
 	},
 

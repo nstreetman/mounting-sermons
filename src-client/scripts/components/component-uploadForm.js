@@ -36,32 +36,52 @@ export const UploadFormComponent = React.createClass({
       file: theFile
     }
 
-    this._fetchYouTubeToken()
-    this.setState({
-      uploadData: dataToUpload
+    this._fetchYouTubeToken(function(err, ytOauthToken){
+      console.log('TOKEN delivered!!!!', ytOauthToken)
+      if (typeof ytOauthToken !== 'undefined'){
+        // ACTIONS.uploadToFileStack(dataToUpload)
+        console.log('passing token to ACTION')
+        ACTIONS.uploadToYoutube(dataToUpload, ytOauthToken)
+      }
     })
-    //
-    // ACTIONS.uploadToFileStack(dataToUpload)
-    // ACTIONS.uploadToYoutube(dataToUpload, '949sanfof;asin;aflkasdnoppaos9e9r')
 
-    },
+  },
 
-  _fetchYouTubeToken: function (){
+  _fetchYouTubeToken: function (cbFunc){
     let component = this
+
     $.getJSON('/oauth/youtube/initialize').then(function(serverRes){
       console.log(serverRes)
-      setInterval(component._pollForToken, 1000)
+      component._fetchCounter = 0
+      component._intervalId = setInterval( component._pollForTokenAndUpload(cbFunc) , 500)
       component.setState({
         youTubeAuthUrl: serverRes.youtubeAuthUrl
       })
     })
   },
 
-  _pollForToken: function(){
+  _pollForTokenAndUpload: function(cb){
     let component = this
-    $.getJSON('/oauth/youtube/get-token').then(function(serverRes){
-      console.log(serverRes)
-    })
+
+    return function(){
+      component._fetchCounter += 1
+      $.getJSON('/oauth/youtube/get-token').then(function(serverRes){
+        console.log(serverRes)
+        if(typeof serverRes.token !== 'undefined'){
+          clearInterval(component._intervalId)
+          cb(null, serverRes.token)
+        }
+      })
+
+      if(component._fetchCounter === 180){
+        clearInterval(component._intervalId)
+        cb('poll-fetch timed out', null)
+
+      }
+    }
+
+
+
   },
 
 
@@ -134,7 +154,7 @@ export const UploadFormComponent = React.createClass({
          </div>
          </div>
       </form>
-      {youTubeAuthButton}
+          <div className="you-tube-button">{youTubeAuthButton}</div>
       </div>
     )
   }

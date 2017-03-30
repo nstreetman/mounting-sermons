@@ -1,4 +1,6 @@
 import Backbone from 'backbone'
+import $ from 'jquery'
+
 
 export const SermonModel = Backbone.Model.extend({
    urlRoot: 'api/sermons',
