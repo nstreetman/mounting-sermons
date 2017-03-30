@@ -1,7 +1,7 @@
 import React from 'react'
 import {ACTIONS} from '../actions.js'
 import {SideBarAnon} from '../components/component-filter.js'
-import YouTubeAudio from 'react-youtube-audio'
+import YouTubeAudio from '../components/lib/player.js'
 
 export const HomeView = React.createClass({
    getInitialState: function(){
@@ -14,19 +14,7 @@ export const HomeView = React.createClass({
    _showSermons: function(data){
       console.log(data);
       return data.map(function(sermObj,i){
-         return(
-         <div className="container-player" key={i}>
-            <div className="info-block">
-               <p>Date: {sermObj.date}</p>
-               <p>Pastor: {sermObj.pastor}</p>
-               <p>Campus: {sermObj.campus}</p>
-               <p>Series Name: {sermObj.series}</p>
-            </div>
-            <div className="player-block">
-               <YouTubeAudio videoId={sermObj.ytVideoId}/>
-            </div>
-         </div>
-         )
+         return <Player sermObj={sermObj} key={i}/>
       })
    },
 
@@ -67,11 +55,22 @@ export const HomeView = React.createClass({
                          updateSearch={this._updateType}
                          searchType={this.state.searchType}/>
             <div>
-            {this._showSermons(filteredSermons)}
+               {this._showSermons(filteredSermons)}
             </div>
 
          </div>
       )
    }
 
+})
+
+let Player = React.createClass({
+	
+   render: function(){
+      return (
+         <div className="container-player">
+            <YouTubeAudio videoId={this.props.sermObj.ytVideoId}/>
+         </div>
+      )
+   }
 })
