@@ -17,9 +17,17 @@ export const HomeView = React.createClass({
    },
 
    _showSermons: function(data){
-
       console.log(data);
-      return data.map(function(sermObj,i){
+      return data
+      .sort(function(sermObjA, sermObjB){
+        console.log(sermObjA)
+        let dateA = new Date(sermObjA.date)
+        let dateB = new Date(sermObjB.date)
+        let dateAInteger = dateA.getTime()
+        let dateBInteger = dateB.getTime()
+        return dateBInteger - dateAInteger
+
+      }).map(function(sermObj,i){
          return(
          <div className="container-player" key={i}>
             <div className="info-block">
