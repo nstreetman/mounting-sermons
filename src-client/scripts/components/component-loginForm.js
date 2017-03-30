@@ -1,26 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
-import {UserModel} from '../models/model-user.js'
+import {AdminModel} from '../models/model-admin.js'
 import {ACTIONS} from '../actions.js'
 
 export const LoginFormComponent = React.createClass({
 
-_handleLoginSubmit: ()=>{
+_handleLoginSubmit: function(evt){
   evt.preventDefault();
   let formEl = evt.target
-  let formData= {
-    email: "holycrosssermons@gmail.com",
-    password: "YesChurch1892"
-  }
+  let userVal = "holycrosssermons@gmail.com"
+  let pwVal= "YesChurch1892"
+  ACTIONS.loginUser(userVal, pwVal)
+
 },
 
 render: function(){
     return (
 
-<form className="form-field" onSubmit={this._handleLoginSubmit}>
+<form className="form auth-form" onSubmit={this._handleLoginSubmit}>
    <div>
-   <label>Email:</label>
+   <label>Admin Email:</label>
       <input type="email"></input>
    </div>
    <div>

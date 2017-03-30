@@ -5,14 +5,15 @@ import ReactDOM from 'react-dom'
 export const HeaderComponent = React.createClass({
    render: function(){
       return(
-         <div className="header container-fluid">
-            <div className="row top-menu">HOME</div>
-            <div className="row top-menu">ABOUT</div>
-            <div className="row top-menu">WORSHIP</div>
-            <div className="row top-menu"><img src="../images/HClogo.png"/></div>
-            <div className="row top-menu">CONTACT</div>
-            <div className="row top-menu">EVENTS</div>
-            <div className="row top-menu">HOW DO I...</div>
+         <div className="header top-menu flex-container">
+            <div className="top-menu flex-item mo_bars"><i className="fa fa-bars" aria-hidden="true"></i></div>
+            <div className="top-menu flex-item navlink"><a href="http://www.holycross.net/">HOME</a></div>
+            <div className="top-menu flex-item navlink"><a href="http://www.holycross.net/whoweare/">ABOUT</a></div>
+            <div className="top-menu flex-item navlink"><a href="http://www.holycross.net/worship/">WORSHIP</a></div>
+            <div className="top-menu flex-item logo"><img src="../images/HClogo.png"/></div>
+            <div className="top-menu flex-item navlink"><a href="http://www.holycross.net/contact/">CONTACT</a></div>
+            <div className="top-menu flex-item navlink"><a href="http://www.holycross.net/events/">EVENTS</a></div>
+            <div className="top-menu flex-item navlink"><a href="http://www.holycross.net/howdoi/">HOW DO I...</a></div>
          </div>
       )
    }

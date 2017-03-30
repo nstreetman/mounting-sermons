@@ -16,9 +16,11 @@ export const UploadFormComponent = React.createClass({
     let theFile = fileInputEl.files[0]
     let client = filestack.init('AoR65q9vnRxqb5UWVJEGBz')
     console.log('uploading file...')
+    window.alert('File Uploading....please wait')
     client.upload(theFile).then(function(fileStackRes){
-      console.log(fileStackRes)
-
+    console.log(fileStackRes)
+    window.alert('Sermon Submitted!')
+    // this.setState()
       // _handleSermonSubmit: function(evt){
       //   evt.preventDefault();
         // let formEl = evt.target
@@ -26,15 +28,15 @@ export const UploadFormComponent = React.createClass({
     // YtApiModule.uploadMetaData(/*{...videoMetaData}*/).then(function(ytUploadToken){
     //   theFile
     // })
-
+    let formEl = uploadform
     let sermonModel = new SermonModel()
       sermonModel.set({
       // let formData = {
-          pastor: 'The Rev. Chris Warner',
-          series: 'CrazyBusy',
-          campus: 'Daniel Island',
-          date: '12/12/10',
-          ytVideoId: 'a_tbxGZuukQ',
+          pastor: formEl.clergy.value,
+          series: formEl.series.value,
+          campus: formEl.campus.value,
+          date: formEl.date.value,
+          ytVideoId: 'kVmJUtORsuM',
           filestackUrl: fileStackRes.url
       })
     sermonModel.save().then(function(serverRes){
@@ -46,51 +48,61 @@ export const UploadFormComponent = React.createClass({
 
   render: function(){
     return (
-
       <form name="uploadform" onSubmit={this._handleUploads} method='post'>
-      <div className="form-field">
+      <div className="container-upload-form">
+      <h1>Sermon Upload Form</h1>
+
+      <div className="form-field form-uploads">
           <label>Clergy</label>
-          <select>
-            <option value="Warner">The Rev. Chris Warner</option>
-            <option value="Norris">The Rev. Sean Norris</option>
-            <option value="Spencer">The Rev. Trevor Spencer</option>
-            <option value="Bennett">The Rev. Jonathan Bennett</option>
-            <option value="AddNew">Add New...</option>
+          <select name="clergy">
+            <option value="The Rev. Jonathan Bennett">Jonathan Bennett</option>
+            <option value="The Rev. Richard Grimball">Richard Grimball</option>
+            <option value="The Rt. Rev. Mark Lawrence">Bishop Lawrence</option>
+            <option value="Mr. Zach Miller">Zach Miller</option>
+            <option value="The Rev. Kate Norris">Kate Norris</option>
+            <option value="The Rev. Sean Norris">Sean Norris</option>
+            <option value="The Rev. Trevor Spencer">Trevor Spencer</option>
+            <option value="The Rev. Chris Warner">Chris Warner</option>
         </select>
       </div>
 
-         <div className="form-field">
+         <div className="form-field form-uploads">
              <label>Sermon Series</label>
-             <select>
-               <option value="GenHearts">Generous Hearts</option>
-               <option value="LifeTogether">Life Together</option>
-               <option value="Formed">Formed</option>
-               <option value="CrazyBusy">Crazy Busy</option>
-               <option value="AddNew">Add New...</option>
+             <select name="series">
+               <option value="Generous Hearts">Generous Hearts</option>
+               <option value="Life Together">Life Together</option>
+               <option value="Formed In Christ">Formed In Christ</option>
+               <option value="Crazy Busy">Crazy Busy</option>
+               <option value="Traveling Light">Traveling Light</option>
+               <option value="Faith at Work">Faith at Work</option>
+               <option value="Follow the Leader">Follow the Leader</option>
+               <option value="Christmas 2016">Christmas 2016</option>
+               <option value="Easter 2017">Easter 2017</option>
+               <option value="None">None</option>
            </select>
          </div>
 
-         <div className="form-field">
+         <div className="form-field form-uploads">
              <label>Campus</label>
-             <select>
-               <option value="SI">Sullivan&#8217;s Island</option>
-               <option value="DI">Daniel Island</option>
-               <option value="ION">I&#8217;On</option>
+             <select name="campus">
+               <option value="Sullivan's Island">Sullivan&#8217;s Island</option>
+               <option value="Daniel Island">Daniel Island</option>
+               <option value="I'On">I&#8217;On</option>
            </select>
          </div>
 
-         <div>
+         <div className="form-field form-uploads">
             <label>Date of Sermon</label>
-            <input type='date'></input>
+            <input type='date' name="date"></input>
          </div>
 
-         <div>
+         <div className="form-field form-uploads form-file-input">
             <input type="file" name="fileInput"/>
          </div>
 
-         <div>
+         <div className="form-field form-uploads">
             <input type="submit" value="Submit"/>
-
+         </div>
          </div>
       </form>
     )
