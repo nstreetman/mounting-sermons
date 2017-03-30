@@ -117,12 +117,6 @@ h3 {
 
 .container-player {
 	width: 75%;
-
-	.download {
-		// color: rgba(177,237,235, 1);
-		font-size: .9em;
-		text-align: right;
-	}
 	// background-color: rgba(169,169,169,.3);
 	// background-color: rgba(177,237,235,.7);
 	background-color: #ECF0F1;
@@ -137,6 +131,12 @@ h3 {
 	border-style: double;
 	border-radius: 3%;
 }
+.download {
+	// color: rgba(177,237,235, 1);
+	font-size: .9em;
+	text-align: right;
+}
+
 
 .info-block {
 	padding-left: 25px;
@@ -232,4 +232,32 @@ h3 {
 	.descriptext {
 		display: none;
 	}
+	.info-block {
+		font-size: 1.75rem;
+		line-height: 1;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.player-block {
+		display: block;
+		font-family: 'Playfair Display', serif;
+		width: 100%;
+		padding-right: 50px;
+	}
+	.container-player {
+		width: 90%;
+		background-color: none;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border: none;
+
+	}
+
+
 }
