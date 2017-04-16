@@ -104,7 +104,7 @@ connectToDB(PROJECT_NAME, (err, result)=>{
       let record = new SomeModel(dataRecord)
 		record.save((err, savedRecord)=>{
 			if (err) console.log(err)
-			console.log('saved: ' + savedRec
+			console.log('saved: ' + savedRec)
 
 			promisesFulfilled++
 			if( promisesFulfilled === seedSet.length) process.exit()
