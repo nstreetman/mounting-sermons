@@ -11,7 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "set-project-name": "node ./src-server/cli/setProjectName.js",
     "build-dist": "webpack",
-    "gen-seed-data": "NODE_ENV=development node ./src-server/db/seed.js"
+    "gen-seed-data": "NODE_ENV=development node ./src-server/db/seed.js",
+    "gen-seed-data-prod": "NODE_ENV=production node ./src-server/db/seed.js"
+
   },
   "author": "",
   "license": "ISC",
