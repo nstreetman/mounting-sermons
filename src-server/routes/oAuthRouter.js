@@ -13,9 +13,9 @@ let youtube_clientRedirect
 
 
 if(process.env.NODE_ENV === 'production'){
-	youtube_clientId = process.env['youTubeOAuth_clientID']
-	youtube_clientSecret = process.env['youTubeOAuth_clientSecret']
-	youtube_clientRedirect = process.env['youTubeOAuth_clientRedirect']
+	youtube_clientId = process.env['YOUTUBE_OAUTH__CLIENT_ID']
+	youtube_clientSecret = process.env['YOUTUBE_OAUTH__CLIENT_SECRET']
+	youtube_clientRedirect = process.env['YOUTUBE_OAUTH__CLIENT_REDIRECT']
 } else {
 	const secrets = require('../../secrets.js') 
 	youtube_clientId = secrets.youTubeOAuth.clientID,
