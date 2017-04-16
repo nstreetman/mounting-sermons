@@ -4,50 +4,99 @@ import Backbone from 'backbone';
 import {SermonModel} from '../models/model-sermon.js';
 import {SermonCollection} from '../models/model-sermon.js';
 import {ACTIONS} from '../actions.js';
+import toastr from 'toastr'
+import $ from 'jquery'
 
 function log (serverRes){
   console.log(serverRes)
 }
 
 export const UploadFormComponent = React.createClass({
-  _handleUploads: function(evt){
-    evt.preventDefault()
-    let fileInputEl = evt.target.fileInput
-    let theFile = fileInputEl.files[0]
-    let client = filestack.init('AoR65q9vnRxqb5UWVJEGBz')
-    console.log('uploading file...')
-    window.alert('File Uploading....please wait')
-    client.upload(theFile).then(function(fileStackRes){
-    console.log(fileStackRes)
-    window.alert('Sermon Submitted!')
-    // this.setState()
-      // _handleSermonSubmit: function(evt){
-      //   evt.preventDefault();
-        // let formEl = evt.target
-
-    // YtApiModule.uploadMetaData(/*{...videoMetaData}*/).then(function(ytUploadToken){
-    //   theFile
-    // })
-    let formEl = uploadform
-    let sermonModel = new SermonModel()
-      sermonModel.set({
-      // let formData = {
-          pastor: formEl.clergy.value,
-          series: formEl.series.value,
-          campus: formEl.campus.value,
-          date: formEl.date.value,
-          ytVideoId: 'kVmJUtORsuM',
-          filestackUrl: fileStackRes.url
-      })
-    sermonModel.save().then(function(serverRes){
-      console.log (serverRes)
-
-    })
-  })
+  getInitialState: function(){
+      return {
+        youTubeAuthUrl:''
+      }
   },
 
+  _handleUploads: function(evt){
+    evt.preventDefault()
+    let formEl = evt.target
+    let fileInputEl = evt.target.fileInput
+    let theFile = fileInputEl.files[0]
+
+
+    console.log('uploading file...', toastr)
+    toastr.info('File Uploading', 'Please wait')
+
+    let dataToUpload = {
+      pastor: formEl.clergy.value,
+      series: formEl.series.value,
+      campus: formEl.campus.value,
+      date: formEl.date.value,
+      file: theFile
+    }
+
+    this._fetchYouTubeToken(function(err, ytOauthToken){
+      console.log('TOKEN delivered!!!!', ytOauthToken)
+      if (typeof ytOauthToken !== 'undefined'){
+        // ACTIONS.uploadToFileStack(dataToUpload)
+        console.log('passing token to ACTION')
+        ACTIONS.uploadToYoutube(dataToUpload, ytOauthToken)
+      }
+    })
+
+  },
+
+  _fetchYouTubeToken: function (cbFunc){
+    let component = this
+
+    $.getJSON('/oauth/youtube/initialize').then(function(serverRes){
+      console.log(serverRes)
+      component._fetchCounter = 0
+      component._intervalId = setInterval( component._pollForTokenAndUpload(cbFunc) , 500)
+      component.setState({
+        youTubeAuthUrl: serverRes.youtubeAuthUrl
+      })
+    })
+  },
+
+  _pollForTokenAndUpload: function(cb){
+    let component = this
+
+    return function(){
+      component._fetchCounter += 1
+      $.getJSON('/oauth/youtube/get-token').then(function(serverRes){
+        console.log(serverRes)
+        if(typeof serverRes.token !== 'undefined'){
+          clearInterval(component._intervalId)
+          cb(null, serverRes.token)
+        }
+      })
+
+      if(component._fetchCounter === 180){
+        clearInterval(component._intervalId)
+        cb('poll-fetch timed out', null)
+
+      }
+    }
+
+
+
+  },
+
+
+
   render: function(){
+    let youTubeAuthButton = ''
+    console.log(this.state)
+     if (this.state.youTubeAuthUrl.length > 0){
+       console.log(this.state)
+       youTubeAuthButton = <a target="_blank" href={this.state.youTubeAuthUrl}>authenticate with YouTube</a>
+     }
+
+    console.log(youTubeAuthButton)
     return (
+      <div>
       <form name="uploadform" onSubmit={this._handleUploads} method='post'>
       <div className="container-upload-form">
       <h1>Sermon Upload Form</h1>
@@ -105,6 +154,8 @@ export const UploadFormComponent = React.createClass({
          </div>
          </div>
       </form>
+          <div className="you-tube-button">{youTubeAuthButton}</div>
+      </div>
     )
   }
 })

@@ -9,8 +9,8 @@ export const LoginFormComponent = React.createClass({
 _handleLoginSubmit: function(evt){
   evt.preventDefault();
   let formEl = evt.target
-  let userVal = "holycrosssermons@gmail.com"
-  let pwVal= "YesChurch1892"
+  let userVal = formEl.email.value
+  let pwVal= formEl.pw.value
   ACTIONS.loginUser(userVal, pwVal)
 
 },
@@ -18,19 +18,20 @@ _handleLoginSubmit: function(evt){
 render: function(){
     return (
 
-<form className="form auth-form" onSubmit={this._handleLoginSubmit}>
-   <div>
-   <label>Admin Email:</label>
-      <input type="email"></input>
-   </div>
-   <div>
-      <label>Password:</label>
-      <input type="password"></input>
-   </div>
-   <div>
-      <input type="submit"></input>
-   </div>
-</form>
+  <form className="form auth-form" onSubmit={this._handleLoginSubmit}>
+     <div className="auth-form-inputs">
+     <h1>Login</h1>
+     <label>Admin Email:</label>
+        <input name="email" type="email"></input>
+     </div>
+     <div className="auth-form-inputs">
+        <label>Password:</label>
+        <input name="pw" type="password"></input>
+     </div>
+     <div auth-form-inputs>
+        <input type="submit" value="Submit"></input>
+     </div>
+  </form>
 )
 }
 })

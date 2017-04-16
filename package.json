@@ -38,6 +38,7 @@
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-youtube-audio": "^0.2.10",
+    "toastr": "^2.1.2",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
