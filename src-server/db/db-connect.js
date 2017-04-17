@@ -11,10 +11,10 @@ function establishDbConnection (dbUrl){
 }
 
 function connectToDB(projectName, cb){
-      console.log('running db-setup')
       let dbLocation = `mongodb://localhost/${projectName}_dev`
       if (process.env.NODE_ENV !== "development") dbLocation = process.env.MONGODB_URI
-		  
+      console.log('connecting to db @ : ', dbLocation)
+
       establishDbConnection(dbLocation)
 			.then( (x) => {
 				console.log(chalk.green(`----  connected to ${x}`))
